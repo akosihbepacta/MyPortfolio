@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Honey Babes Epacta — Senior Full-Stack Web Developer</title>
+  <meta name="description" content="Senior Full-Stack Web Developer with 8+ years of experience in WordPress, Laravel, Vue.js, and website management."/>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            sky: '#5C94FC',
+            'sky-dark': '#3A6FD8',
+            ground: '#C84B0E',
+            ground2: '#8B3300',
+            brick: '#C84B0E',
+            coin: '#FBD000',
+            coin2: '#C89800',
+            pipe: '#1A8A1A',
+            pipe2: '#0F5F0F',
+            panel: '#2A1600',
+            panel2: '#3A2200',
+            text: '#FFF8E7',
+            muted: '#C8A87A',
+            dark: '#140C00',
+            dark2: '#1E1200',
+            'mario-r': '#E52A2A',
+            green: '#42D142',
+          },
+          fontFamily: {
+            pixel: ['"Press Start 2P"', 'monospace'],
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body class="bg-dark text-text font-sans text-base leading-relaxed antialiased overflow-x-hidden">
+
+  <!-- ── NAV ── -->
+  <nav id="main-nav" class="fixed top-0 left-0 right-0 z-[200] bg-dark2 border-b-4 border-black shadow-[0_4px_0_#8B3300] transition-all duration-300">
+    <div class="flex items-center justify-between max-w-[1100px] mx-auto px-6 py-3 gap-4">
+      <div class="font-pixel text-[0.7rem] color-coin text-coin leading-normal whitespace-nowrap shrink-0">
+        HB<span class="text-text">.</span>dev
+      </div>
+      <ul class="hidden md:flex items-center gap-6" id="nav-links">
+        <li><a href="#about" class="font-pixel text-[0.45rem] text-muted tracking-wider hover:text-coin transition-colors leading-loose">About</a></li>
+        <li><a href="#cv" class="font-pixel text-[0.45rem] text-muted tracking-wider hover:text-coin transition-colors leading-loose">CV</a></li>
+        <li><a href="#skills" class="font-pixel text-[0.45rem] text-muted tracking-wider hover:text-coin transition-colors leading-loose">Skills</a></li>
+        <li><a href="#tools" class="font-pixel text-[0.45rem] text-muted tracking-wider hover:text-coin transition-colors leading-loose">Tools</a></li>
+        <li><a href="#projects" class="font-pixel text-[0.45rem] text-muted tracking-wider hover:text-coin transition-colors leading-loose">Projects</a></li>
+        <li><a href="#experience" class="font-pixel text-[0.45rem] text-muted tracking-wider hover:text-coin transition-colors leading-loose">Experience</a></li>
+        <li><a href="#services" class="font-pixel text-[0.45rem] text-muted tracking-wider hover:text-coin transition-colors leading-loose">Services</a></li>
+        <li><a href="#contact" class="font-pixel text-[0.45rem] text-muted tracking-wider hover:text-coin transition-colors leading-loose">Contact</a></li>
+      </ul>
+      <div class="hidden md:flex items-center gap-3">
+        <a href="#cv" class="font-pixel text-[0.45rem] px-3 py-2 bg-transparent text-coin border-2 border-coin whitespace-nowrap hover:bg-[rgba(251,208,0,0.15)] transition-all">CV</a>
+        <a href="#contact" class="font-pixel text-[0.45rem] px-3 py-2 bg-coin text-dark border-t-3 border-l-3 border-[#FFF176] border-b-3 border-r-3 border-coin2 whitespace-nowrap hover:bg-[#FFE040] transition-colors">Hire Me</a>
+      </div>
+      <button class="md:hidden flex flex-col gap-[5px] p-[6px] cursor-pointer" id="burger" aria-label="Open menu">
+        <span class="block w-[22px] h-[3px] bg-coin"></span>
+        <span class="block w-[22px] h-[3px] bg-coin"></span>
+        <span class="block w-[22px] h-[3px] bg-coin"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── MOBILE MENU ── -->
+  <div class="hidden fixed inset-0 bg-[rgba(10,4,0,0.97)] z-[199] flex-col items-center justify-center gap-6" id="mobile-menu">
+    <span class="absolute top-5 right-6 font-pixel text-[0.6rem] text-muted cursor-pointer leading-loose" id="close-menu">[ X ]</span>
+    <a href="#about" class="menu-link font-pixel text-[0.75rem] text-muted hover:text-coin leading-loose transition-colors">About</a>
+    <a href="#cv" class="menu-link font-pixel text-[0.75rem] text-muted hover:text-coin leading-loose transition-colors">Download CV</a>
+    <a href="#skills" class="menu-link font-pixel text-[0.75rem] text-muted hover:text-coin leading-loose transition-colors">Skills</a>
+    <a href="#tools" class="menu-link font-pixel text-[0.75rem] text-muted hover:text-coin leading-loose transition-colors">Tools Used</a>
+    <a href="#projects" class="menu-link font-pixel text-[0.75rem] text-muted hover:text-coin leading-loose transition-colors">Projects</a>
+    <a href="#experience" class="menu-link font-pixel text-[0.75rem] text-muted hover:text-coin leading-loose transition-colors">Experience</a>
+    <a href="#services" class="menu-link font-pixel text-[0.75rem] text-muted hover:text-coin leading-loose transition-colors">Services</a>
+    <a href="#why" class="menu-link font-pixel text-[0.75rem] text-muted hover:text-coin leading-loose transition-colors">Why Me</a>
+    <a href="#contact" class="menu-link font-pixel text-[0.75rem] text-muted hover:text-coin leading-loose transition-colors">Contact</a>
+  </div>
+
+  <!-- ── HERO & GAME STAGE ── -->
+  <section id="hero" class="p-0 relative bg-sky overflow-hidden min-h-screen flex flex-col">
+    <div id="game-stage" class="flex-1 relative pt-[100px] overflow-hidden">
+      
+      <!-- Score HUD -->
+      <div class="absolute top-[75px] sm:top-[90px] right-4 sm:right-8 font-pixel text-[0.45rem] text-dark bg-coin px-3 py-1.5 leading-loose border-t-3 border-l-3 border-[#FFF176] border-b-3 border-r-3 border-coin2 z-25">
+        COINS: <span id="coin-count">00</span>
+      </div>
+
+      <!-- Question Block -->
+      <div class="absolute right-[8%] sm:right-[18%] top-[160px] sm:top-[220px] w-[44px] h-[44px] bg-coin border-t-4 border-l-4 border-[#FFF176] border-b-4 border-r-4 border-coin2 flex items-center justify-center font-pixel text-[0.8rem] text-dark cursor-pointer select-none z-15 shadow-[0_4px_0_rgba(0,0,0,0.2)] active:not(.hit):-translate-y-1 transition-transform" id="q-block">?</div>
+
+      <!-- Floating clouds -->
+      <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+        <svg class="absolute top-[12%] left-[-100px] animate-float-1" width="100" height="40" viewBox="0 0 100 40">
+          <rect x="10" y="15" width="80" height="24" fill="#fff" rx="4"/>
+          <rect x="30" y="5" width="44" height="20" fill="#fff" rx="4"/>
+        </svg>
+        <svg class="absolute top-[25%] left-[-150px] animate-float-2" width="130" height="50" viewBox="0 0 130 50">
+          <rect x="10" y="20" width="110" height="28" fill="#fff" rx="4"/>
+          <rect x="35" y="5" width="60" height="25" fill="#fff" rx="4"/>
+        </svg>
+        <svg class="absolute top-[40%] left-[-80px] animate-float-3" width="80" height="35" viewBox="0 0 80 35">
+          <rect x="5" y="12" width="70" height="20" fill="#fff" rx="4"/>
+          <rect x="20" y="4" width="38" height="15" fill="#fff" rx="4"/>
+        </svg>
+      </div>
+
+      <!-- Pipe -->
+      <div class="absolute right-[6%] bottom-0 flex flex-col items-center pointer-events-none z-5" aria-hidden="true">
+        <div class="w-[68px] h-[20px] bg-pipe border-t-4 border-l-4 border-[#2FBF2F] border-b-4 border-r-4 border-pipe2"></div>
+        <div class="w-[56px] h-[90px] bg-pipe border-l-4 border-[#2FBF2F] border-r-4 border-pipe2"></div>
+      </div>
+
+      <!-- Hills -->
+      <svg class="absolute bottom-0 left-0 w-full h-full pointer-events-none overflow-visible" aria-hidden="true">
+        <ellipse cx="15%" cy="100%" rx="120" ry="70" fill="#42A832" opacity=".7"/>
+        <ellipse cx="42%" cy="102%" rx="180" ry="100" fill="#369A28" opacity=".6"/>
+        <ellipse cx="85%" cy="101%" rx="140" ry="85" fill="#42A832" opacity=".65"/>
+      </svg>
+
+      <div class="relative z-10 max-w-[1100px] mx-auto px-6 pt-4 pb-12 w-full">
+        <div class="flex gap-2 mb-6 items-center">
+          <div class="w-[18px] h-[18px] bg-coin rounded-full border-3 border-coin2 animate-coin-spin"></div>
+          <div class="w-[18px] h-[18px] bg-coin rounded-full border-3 border-coin2 animate-coin-spin [animation-delay:.15s]"></div>
+          <div class="w-[18px] h-[18px] bg-coin rounded-full border-3 border-coin2 animate-coin-spin [animation-delay:.3s]"></div>
+          <span class="font-pixel text-[0.42rem] text-dark leading-loose ml-1">x AVAILABLE FOR WORK</span>
+        </div>
+        <h1 class="font-pixel text-[clamp(0.95rem,3.8vw,2.1rem)] leading-snug text-dark mb-3 [text-shadow:3px_3px_0_rgba(255,255,255,0.4)]">Honey Babes Epacta</h1>
+        <p class="font-pixel text-[clamp(0.6rem,1.6vw,0.9rem)] text-[#111] leading-relaxed mb-6 bg-white/30 inline-block px-2.5 py-1 border-2 border-dashed border-dark">Senior Full-Stack Web Developer</p>
+        <p class="text-[1.05rem] text-dark max-w-[52ch] mb-8 font-medium leading-relaxed">
+          I build, maintain, and optimize robust web applications and client websites. Expert in WordPress, Laravel, Vue.js, PHP, and modern web workflows. Ready to turn your complex ideas into high-performing websites.
+        </p>
+        <div class="flex gap-4 flex-wrap max-[400px]:flex-col">
+          <a href="#projects" class="pixel-btn btn-coin">View My Work</a>
+          <a href="#cv" class="pixel-btn btn-outline">⚡ Download CV</a>
+          <a href="#contact" class="pixel-btn btn-outline">Let's Talk</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ground platform -->
+    <div class="w-full bg-ground border-t-8 border-[#E86030] p-0 relative z-6">
+      <div id="mario" class="absolute right-[4%] sm:right-[10%] bottom-full -mb-1 w-[38px] sm:w-[48px] h-[54px] z-8 [image-rendering:pixelated] transition-transform duration-100 ease-linear mario-jumping" aria-label="Mario Character">
+        <svg width="48" height="54" viewBox="0 0 12 13" xmlns="http://www.w3.org/2000/svg" image-rendering="pixelated" shape-rendering="crispEdges">
+          <rect x="3" y="0" width="6" height="1" fill="#E52A2A"/>
+          <rect x="2" y="1" width="8" height="1" fill="#E52A2A"/>
+          <rect x="2" y="2" width="7" height="1" fill="#FAB387"/>
+          <rect x="1" y="3" width="9" height="2" fill="#FAB387"/>
+          <rect x="3" y="3" width="1" height="1" fill="#000"/>
+          <rect x="7" y="3" width="1" height="1" fill="#000"/>
+          <rect x="2" y="4" width="3" height="1" fill="#7A3B00"/>
+          <rect x="6" y="4" width="3" height="1" fill="#7A3B00"/>
+          <rect x="1" y="5" width="10" height="1" fill="#E52A2A"/>
+          <rect x="0" y="6" width="12" height="2" fill="#E52A2A"/>
+          <rect x="3" y="7" width="2" height="1" fill="#FAB387"/>
+          <rect x="7" y="7" width="2" height="1" fill="#FAB387"/>
+          <rect x="0" y="8" width="5" height="2" fill="#215FAB"/>
+          <rect x="7" y="8" width="5" height="2" fill="#215FAB"/>
+          <rect x="5" y="8" width="2" height="1" fill="#FAB387"/>
+          <rect x="0" y="10" width="5" height="2" fill="#7A3B00"/>
+          <rect x="7" y="10" width="5" height="2" fill="#7A3B00"/>
+        </svg>
+      </div>
+
+      <div class="flex w-full overflow-hidden" id="bricks-row"></div>
+      <div class="h-[24px] bg-ground2 w-full"></div>
+      <div class="h-[14px] bg-[#5A1E00] w-full"></div>
+    </div>
+
+    <!-- Stats Bar -->
+    <div class="bg-dark border-t-4 border-black px-6 py-5 flex justify-center gap-6 sm:gap-[3.5rem] flex-wrap">
+      <div class="text-center">
+        <span class="font-pixel text-[1.15rem] text-coin leading-normal block">8+</span>
+        <span class="font-pixel text-[0.4rem] text-muted leading-loose uppercase">Years Exp.</span>
+      </div>
+      <div class="text-center">
+        <span class="font-pixel text-[1.15rem] text-coin leading-normal block">9+</span>
+        <span class="font-pixel text-[0.4rem] text-muted leading-loose uppercase">Live Sites</span>
+      </div>
+      <div class="text-center">
+        <span class="font-pixel text-[1.15rem] text-coin leading-normal block">100%</span>
+        <span class="font-pixel text-[0.4rem] text-muted leading-loose uppercase">Client Satisfaction</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ground Strip Divider -->
+  <div class="w-full h-[40px] bg-ground border-t-8 border-[#E86030] border-b-8 border-ground2 relative after:content-[''] after:absolute after:inset-0 after:[background-image:repeating-linear-gradient(90deg,transparent_0,transparent_79px,rgba(0,0,0,.2)_79px,rgba(0,0,0,.2)_80px)]"></div>
+
+  <!-- ── ABOUT ── -->
+  <section id="about" class="bg-dark2 py-14 sm:py-[5.5rem]">
+    <div class="max-w-[1100px] mx-auto px-6">
+      <p class="font-pixel text-[0.55rem] text-coin tracking-widest mb-4 leading-loose uppercase">// About Me</p>
+      <h2 class="font-pixel text-[clamp(0.95rem,2.5vw,1.45rem)] leading-relaxed mb-4 text-text">Building websites people actually rely on</h2>
+
+      <div class="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-12 items-start">
+        <div class="reveal">
+          <p class="text-muted mb-5 text-[0.98rem] leading-relaxed">
+            I'm a Senior Full-Stack Web Developer with over 8 years of hands-on experience building and managing websites for real clients. My work covers the full lifecycle — from initial development and CMS setup through to troubleshooting, performance optimization, and long-term maintenance.
+          </p>
+          <p class="text-muted mb-5 text-[0.98rem] leading-relaxed">
+            At Technomancer Inc., I spent more than seven years building and maintaining a wide range of client websites — WordPress, WooCommerce, Shopify, and custom Laravel and Vue.js applications. I'm just as comfortable working inside a page builder as I am writing server-side PHP or setting up a deployment pipeline.
+          </p>
+          <p class="text-muted mb-5 text-[0.98rem] leading-relaxed">
+            I care about the things that matter after launch: fast load times, clean code, accessible markup, and websites that keep working reliably. I'm used to working independently and as part of a team, communicating clearly, and juggling multiple projects without losing quality.
+          </p>
+          <div class="flex flex-wrap gap-2 mt-7">
+            <span class="font-pixel text-[0.38rem] px-3 py-1.5 bg-panel text-coin border-t-2 border-l-2 border-[#5A3000] border-b-2 border-r-2 border-black leading-loose hover:-translate-y-0.5 hover:text-white transition-all">WordPress</span>
+            <span class="font-pixel text-[0.38rem] px-3 py-1.5 bg-panel text-coin border-t-2 border-l-2 border-[#5A3000] border-b-2 border-r-2 border-black leading-loose hover:-translate-y-0.5 hover:text-white transition-all">Elementor</span>
+            <span class="font-pixel text-[0.38rem] px-3 py-1.5 bg-panel text-coin border-t-2 border-l-2 border-[#5A3000] border-b-2 border-r-2 border-black leading-loose hover:-translate-y-0.5 hover:text-white transition-all">Laravel</span>
+            <span class="font-pixel text-[0.38rem] px-3 py-1.5 bg-panel text-coin border-t-2 border-l-2 border-[#5A3000] border-b-2 border-r-2 border-black leading-loose hover:-translate-y-0.5 hover:text-white transition-all">Vue.js</span>
+            <span class="font-pixel text-[0.38rem] px-3 py-1.5 bg-panel text-coin border-t-2 border-l-2 border-[#5A3000] border-b-2 border-r-2 border-black leading-loose hover:-translate-y-0.5 hover:text-white transition-all">PHP</span>
+            <span class="font-pixel text-[0.38rem] px-3 py-1.5 bg-panel text-coin border-t-2 border-l-2 border-[#5A3000] border-b-2 border-r-2 border-black leading-loose hover:-translate-y-0.5 hover:text-white transition-all">JavaScript</span>
+            <span class="font-pixel text-[0.38rem] px-3 py-1.5 bg-panel text-coin border-t-2 border-l-2 border-[#5A3000] border-b-2 border-r-2 border-black leading-loose hover:-translate-y-0.5 hover:text-white transition-all">Tailwind CSS</span>
+            <span class="font-pixel text-[0.38rem] px-3 py-1.5 bg-panel text-coin border-t-2 border-l-2 border-[#5A3000] border-b-2 border-r-2 border-black leading-loose hover:-translate-y-0.5 hover:text-white transition-all">cPanel</span>
+            <span class="font-pixel text-[0.38rem] px-3 py-1.5 bg-panel text-coin border-t-2 border-l-2 border-[#5A3000] border-b-2 border-r-2 border-black leading-loose hover:-translate-y-0.5 hover:text-white transition-all">SEO</span>
+            <span class="font-pixel text-[0.38rem] px-3 py-1.5 bg-panel text-coin border-t-2 border-l-2 border-[#5A3000] border-b-2 border-r-2 border-black leading-loose hover:-translate-y-0.5 hover:text-white transition-all">WooCommerce</span>
+            <span class="font-pixel text-[0.38rem] px-3 py-1.5 bg-panel text-coin border-t-2 border-l-2 border-[#5A3000] border-b-2 border-r-2 border-black leading-loose hover:-translate-y-0.5 hover:text-white transition-all">Shopify</span>
+            <span class="font-pixel text-[0.38rem] px-3 py-1.5 bg-panel text-coin border-t-2 border-l-2 border-[#5A3000] border-b-2 border-r-2 border-black leading-loose hover:-translate-y-0.5 hover:text-white transition-all">MySQL</span>
+          </div>
+        </div>
+        <div class="flex flex-col gap-4 reveal">
+          <div class="bg-panel border-t-3 border-l-3 border-[#5A3000] border-b-3 border-r-3 border-black p-4 transition-colors hover:border-coin">
+            <div class="font-pixel text-[0.38rem] text-muted leading-loose mb-1.5 uppercase">Specialisation</div>
+            <div class="text-[0.92rem] font-semibold text-text">WordPress & Full-Stack Dev</div>
+          </div>
+          <div class="bg-panel border-t-3 border-l-3 border-[#5A3000] border-b-3 border-r-3 border-black p-4 transition-colors hover:border-coin">
+            <div class="font-pixel text-[0.38rem] text-muted leading-loose mb-1.5 uppercase">Experience</div>
+            <div class="text-[0.92rem] font-semibold text-text">8+ years (2015 – Present)</div>
+          </div>
+          <div class="bg-panel border-t-3 border-l-3 border-[#5A3000] border-b-3 border-r-3 border-black p-4 transition-colors hover:border-coin">
+            <div class="font-pixel text-[0.38rem] text-muted leading-loose mb-1.5 uppercase">Most Recent Role</div>
+            <div class="text-[0.92rem] font-semibold text-text">Senior Web Dev at Technomancer Inc.</div>
+          </div>
+          <div class="bg-panel border-t-3 border-l-3 border-[#5A3000] border-b-3 border-r-3 border-black p-4 transition-colors hover:border-coin">
+            <div class="font-pixel text-[0.38rem] text-muted leading-loose mb-1.5 uppercase">Location</div>
+            <div class="text-[0.92rem] font-semibold text-text">Philippines · Remote-ready</div>
+          </div>
+          <div class="bg-panel border-t-3 border-l-3 border-[#5A3000] border-b-3 border-r-3 border-black p-4 transition-colors hover:border-coin">
+            <div class="font-pixel text-[0.38rem] text-muted leading-loose mb-1.5 uppercase">Status</div>
+            <div class="text-[0.92rem] font-semibold text-green">Open to opportunities</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="w-full h-[40px] bg-ground border-t-8 border-[#E86030] border-b-8 border-ground2 relative after:content-[''] after:absolute after:inset-0 after:[background-image:repeating-linear-gradient(90deg,transparent_0,transparent_79px,rgba(0,0,0,.2)_79px,rgba(0,0,0,.2)_80px)]"></div>
+
+  <!-- ── DOWNLOAD CV SECTION ── -->
+  <section id="cv" class="bg-panel border-t-4 border-b-4 border-t-coin border-b-coin2 relative py-14 sm:py-[5.5rem]">
+    <div class="max-w-[1100px] mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center bg-dark2 p-10 border-t-4 border-l-4 border-[#5A3000] border-b-4 border-r-4 border-black reveal">
+        <div>
+          <p class="font-pixel text-[0.55rem] text-coin tracking-widest mb-4 leading-loose uppercase">// Curriculum Vitae</p>
+          <h2 class="font-pixel text-[clamp(0.95rem,2.5vw,1.45rem)] leading-relaxed text-text mb-4">Need a summary for your team?</h2>
+          <p class="text-muted text-[0.95rem] leading-relaxed">
+            Download my updated CV to get a quick overview of my career experience, detailed project history, technical expertise, and education.
+          </p>
+          <div class="flex flex-col gap-4 mt-4">
+            <div class="flex items-center gap-3 text-[0.9rem] text-muted">
+              <span class="font-pixel text-coin text-[0.6rem]">&gt;</span> 8+ Years of Senior Full-Stack Development Experience
+            </div>
+            <div class="flex items-center gap-3 text-[0.9rem] text-muted">
+              <span class="font-pixel text-coin text-[0.6rem]">&gt;</span> In-depth expertise in Laravel, Vue.js, PHP, & WordPress
+            </div>
+            <div class="flex items-center gap-3 text-[0.9rem] text-muted">
+              <span class="font-pixel text-coin text-[0.6rem]">&gt;</span> Proven track record of managing live client infrastructure
+            </div>
+          </div>
+        </div>
+        <div class="text-center bg-panel2 p-8 border-3 border-dashed border-coin flex flex-col items-center gap-5">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#FBD000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          <div class="font-pixel text-[0.65rem] text-text">Honey_Babes_Epacta_CV.pdf</div>
+          <a href="Honey_Babes_Epacta_CV.pdf" download class="pixel-btn btn-coin w-full">
+            Download CV (PDF)
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="w-full h-[40px] bg-ground border-t-8 border-[#E86030] border-b-8 border-ground2 relative after:content-[''] after:absolute after:inset-0 after:[background-image:repeating-linear-gradient(90deg,transparent_0,transparent_79px,rgba(0,0,0,.2)_79px,rgba(0,0,0,.2)_80px)]"></div>
+
+  <!-- ── SKILLS ── -->
+  <section id="skills" class="bg-dark py-14 sm:py-[5.5rem]">
+    <div class="max-w-[1100px] mx-auto px-6">
+      <p class="font-pixel text-[0.55rem] text-coin tracking-widest mb-4 leading-loose uppercase">// Technical Skills</p>
+      <h2 class="font-pixel text-[clamp(0.95rem,2.5vw,1.45rem)] leading-relaxed mb-4 text-text">What I work with</h2>
+      <p class="text-muted max-w-[60ch] mb-12 text-[0.98rem]">A toolkit built over 8 years of working on real projects — from small business sites to custom web applications.</p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="bg-panel border-t-3 border-l-3 border-[#5A3000] border-b-3 border-r-3 border-black p-6 transition-all hover:-translate-y-1 hover:border-coin reveal">
+          <div class="font-pixel text-[0.52rem] text-coin leading-loose mb-4 pb-3 border-b-2 border-[rgba(251,208,0,0.15)] uppercase">Web Development</div>
+          <div class="flex flex-wrap gap-2">
+            <span class="font-pixel text-[0.35rem] px-2.5 py-1.5 bg-[rgba(251,208,0,0.12)] text-coin border border-[rgba(251,208,0,0.3)] leading-loose hover:bg-coin hover:text-dark transition-all">PHP</span>
+            <span class="font-pixel text-[0.35rem] px-2.5 py-1.5 bg-[rgba(251,208,0,0.12)] text-coin border border-[rgba(251,208,0,0.3)] leading-loose hover:bg-coin hover:text-dark transition-all">JavaScript</span>
+            <span class="font-pixel text-[0.35rem] px-2.5 py-1.5 bg-dark2 text-muted border border-[rgba(255,248,231,0.07)] leading-loose hover:bg-coin hover:text-dark transition-all">HTML5</span>
+            <span class="font-pixel text-[0.35rem] px-2.5 py-1.5 bg-dark2 text-muted border border-[rgba(255,248,231,0.07)] leading-loose hover:bg-coin hover:text-dark transition-all">CSS3</span>
+            <span class="font-pixel text-[0.35rem] px-2.5 py-1.5 bg-dark2 text-muted border border-[rgba(255,248,231,0.07)] leading-loose hover:bg-coin hover:text-dark transition-all">SQL</span>
+          </div>
+        </div>
+
+        <div class="bg-panel border-t-3 border-l-3 border-[#5A3000] border-b-3 border-r-3 border-black p-6 transition-all hover:-translate-y-1 hover:border-coin reveal">
+          <div class="font-pixel text-[0.52rem] text-coin leading-loose mb-4 pb-3 border-b-2 border-[rgba(251,208,0,0.15)] uppercase">Frameworks & Libraries</div>
+          <div class="flex flex-wrap gap-2">
+            <span class="font-pixel text-[0.35rem] px-2.5 py-1.5 bg-[rgba(251,208,0,0.12)] text-coin border border-[rgba(251,208,0,0.3)] leading-loose hover:bg-coin hover:text-dark transition-all">Laravel</span>
+            <span class="font-pixel text-[0.35rem] px-2.5 py-1.5 bg-[rgba(251,208,0,0.12)] text-coin border border-[rgba(251,208,0,0.3)] leading-loose hover:bg-coin hover:text-dark transition-all">Vue.js</span>
+            <span class="font-pixel text-[0.35rem] px-2.5 py-1.5 bg-dark2 text-muted border border-[rgba(255,248,231,0.07)] leading-loose hover:bg-coin hover:text-dark transition-all">Bootstrap</span>
+            <span class="font-pixel text-[0.35rem] px-2.5 py-1.5 bg-dark2 text-muted border border-[rgba(255,248,231,0.07)] leading-loose hover:bg-coin hover:text-dark transition-all">Tailwind CSS</span>
+          </div>
+        </div>
+
+        <div class="bg-panel border-t-3 border-l-3 border-[#5A3000] border-b-3 border-r-3 border-black p-6 transition-all hover:-translate-y-1 hover:border-coin reveal">
+          <div class="font-pixel text-[0.52rem] text-coin leading-loose mb-4 pb-3 border-b-2 border-[rgba(251,208,0,0.15)] uppercase">CMS & Builders</div>
+          <div class="flex flex-wrap gap-2">
+            <span class="font-pixel text-[0.35rem] px-2.5 py-1.5 bg-[rgba(251,208,0,0.12)] text-coin border border-[rgba(251,208,0,0.3)] leading-loose hover:bg-coin hover:text-dark transition-all">WordPress</span>
+            <span class="font-pixel text-[0.35rem] px-2.5 py-1.5 bg-[rgba(251,208,0,0.12)] text-coin border border-[rgba(251,208,0,0.3)] leading-loose hover:bg-coin hover:text-dark transition-all">Elementor</span>
+            <span class="font-pixel text-[0.35rem] px-2.5 py-1.5 bg-dark2 text-muted border border-[rgba(255,248,231,0.07)] leading-loose hover:bg-coin hover:text-dark transition-all">WooCommerce</span>
+            <span class="font-pixel text-[0.35rem] px-2.5 py-1.5 bg-dark2 text-muted border border-[rgba(255,248,231,0.07)] leading-loose hover:bg-coin hover:text-dark transition-all">Shopify</span>
+            <span class="font-pixel text-[0.35rem] px-2.5 py-1.5 bg-dark2 text-muted border border-[rgba(255,248,231,0.07)] leading-loose hover:bg-coin hover:text-dark transition-all">CMS Custom</span>
+          </div>
+        </div>
+
+        <div class="bg-panel border-t-3 border-l-3 border-[#5A3000] border-b-3 border-r-3 border-black p-6 transition-all hover:-translate-y-1 hover:border-coin reveal">
+          <div class="font-pixel text-[0.52rem] text-coin leading-loose mb-4 pb-3 border-b-2 border-[rgba(251,208,0,0.15)] uppercase">Dev Tools & Databases</div>
+          <div class="flex flex-wrap gap-2">
+            <span class="font-pixel text-[0.35rem] px-2.5 py-1.5 bg-dark2 text-muted border border-[rgba(255,248,231,0.07)] leading-loose hover:bg-coin hover:text-dark transition-all">MySQL</span>
+            <span class="font-pixel text-[0.35rem] px-2.5 py-1.5 bg-dark2 text-muted border border-[rgba(255,248,231,0.07)] leading-loose hover:bg-coin hover:text-dark transition-all">Git</span>
+            <span class="font-pixel text-[0.35rem] px-2.5 py-1.5 bg-dark2 text-muted border border-[rgba(255,248,231,0.07)] leading-loose hover:bg-coin hover:text-dark transition-all">GitHub</span>
+            <span class="font-pixel text-[0.35rem] px-2.5 py-1.5 bg-dark2 text-muted border border-[rgba(255,248,231,0.07)] leading-loose hover:bg-coin hover:text-dark transition-all">Composer</span>
+            <span class="font-pixel text-[0.35rem] px-2.5 py-1.5 bg-dark2 text-muted border border-[rgba(255,248,231,0.07)] leading-loose hover:bg-coin hover:text-dark transition-all">Vite</span>
+            <span class="font-pixel text-[0.35rem] px-2.5 py-1.5 bg-dark2 text-muted border border-[rgba(255,248,231,0.07)] leading-loose hover:bg-coin hover:text-dark transition-all">npm</span>
+          </div>
+        </div>
+
+        <div class="bg-panel border-t-3 border-l-3 border-[#5A3000] border-b-3 border-r-3 border-black p-6 transition-all hover:-translate-y-1 hover:border-coin reveal">
+          <div class="font-pixel text-[0.52rem] text-coin leading-loose mb-4 pb-3 border-b-2 border-[rgba(251,208,0,0.15)] uppercase">Hosting & Management</div>
+          <div class="flex flex-wrap gap-2">
+            <span class="font-pixel text-[0.35rem] px-2.5 py-1.5 bg-[rgba(251,208,0,0.12)] text-coin border border-[rgba(251,208,0,0.3)] leading-loose hover:bg-coin hover:text-dark transition-all">cPanel</span>
+            <span class="font-pixel text-[0.35rem] px-2.5 py-1.5 bg-dark2 text-muted border border-[rgba(255,248,231,0.07)] leading-loose hover:bg-coin hover:text-dark transition-all">Migrations</span>
+            <span class="font-pixel text-[0.35rem] px-2.5 py-1.5 bg-dark2 text-muted border border-[rgba(255,248,231,0.07)] leading-loose hover:bg-coin hover:text-dark transition-all">Domain & DNS</span>
+            <span class="font-pixel text-[0.35rem] px-2.5 py-1.5 bg-dark2 text-muted border border-[rgba(255,248,231,0.07)] leading-loose hover:bg-coin hover:text-dark transition-all">SSL Setup</span>
+            <span class="font-pixel text-[0.35rem] px-2.5 py-1.5 bg-dark2 text-muted border border-[rgba(255,248,231,0.07)] leading-loose hover:bg-coin hover:text-dark transition-all">Deployment</span>
+            <span class="font-pixel text-[0.35rem] px-2.5 py-1.5 bg-dark2 text-muted border border-[rgba(255,248,231,0.07)] leading-loose hover:bg-coin hover:text-dark transition-all">Maintenance</span>
+          </div>
+        </div>
+
+        <div class="bg-panel border-t-3 border-l-3 border-[#5A3000] border-b-3 border-r-3 border-black p-6 transition-all hover:-translate-y-1 hover:border-coin reveal">
+          <div class="font-pixel text-[0.52rem] text-coin leading-loose mb-4 pb-3 border-b-2 border-[rgba(251,208,0,0.15)] uppercase">Other Skills</div>
+          <div class="flex flex-wrap gap-2">
+            <span class="font-pixel text-[0.35rem] px-2.5 py-1.5 bg-dark2 text-muted border border-[rgba(255,248,231,0.07)] leading-loose hover:bg-coin hover:text-dark transition-all">Responsive Design</span>
+            <span class="font-pixel text-[0.35rem] px-2.5 py-1.5 bg-dark2 text-muted border border-[rgba(255,248,231,0.07)] leading-loose hover:bg-coin hover:text-dark transition-all">Performance</span>
+            <span class="font-pixel text-[0.35rem] px-2.5 py-1.5 bg-dark2 text-muted border border-[rgba(255,248,231,0.07)] leading-loose hover:bg-coin hover:text-dark transition-all">SEO</span>
+            <span class="font-pixel text-[0.35rem] px-2.5 py-1.5 bg-dark2 text-muted border border-[rgba(255,248,231,0.07)] leading-loose hover:bg-coin hover:text-dark transition-all">API Integration</span>
+            <span class="font-pixel text-[0.35rem] px-2.5 py-1.5 bg-dark2 text-muted border border-[rgba(255,248,231,0.07)] leading-loose hover:bg-coin hover:text-dark transition-all">Payment Gateways</span>
+            <span class="font-pixel text-[0.35rem] px-2.5 py-1.5 bg-dark2 text-muted border border-[rgba(255,248,231,0.07)] leading-loose hover:bg-coin hover:text-dark transition-all">QA & Testing</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="w-full h-[40px] bg-ground border-t-8 border-[#E86030] border-b-8 border-ground2 relative after:content-[''] after:absolute after:inset-0 after:[background-image:repeating-linear-gradient(90deg,transparent_0,transparent_79px,rgba(0,0,0,.2)_79px,rgba(0,0,0,.2)_80px)]"></div>
+
+  <!-- ── TOOLS USED ── -->
+  <section id="tools" class="bg-dark2 py-14 sm:py-[5.5rem]">
+    <div class="max-w-[1100px] mx-auto px-6">
+      <p class="font-pixel text-[0.55rem] text-coin tracking-widest mb-4 leading-loose uppercase">// Workflow & Productivity</p>
+      <h2 class="font-pixel text-[clamp(0.95rem,2.5vw,1.45rem)] leading-relaxed mb-4 text-text">Tools & Software I Use</h2>
+      <p class="text-muted max-w-[60ch] mb-12 text-[0.98rem]">The everyday tools that power my development workflow, debugging, and project delivery.</p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="bg-panel border-t-3 border-l-3 border-[#5A3000] border-b-3 border-r-3 border-black p-5 flex items-center gap-4 transition-all hover:-translate-y-1 hover:border-green reveal">
+          <div class="w-[42px] h-[42px] bg-dark border-2 border-[rgba(251,208,0,0.15)] flex items-center justify-center font-pixel text-[0.65rem] text-coin shrink-0">VS</div>
+          <div>
+            <div class="font-pixel text-[0.45rem] text-text leading-snug">VS Code</div>
+            <div class="text-[0.75rem] text-muted">Code Editor</div>
+          </div>
+        </div>
+
+        <div class="bg-panel border-t-3 border-l-3 border-[#5A3000] border-b-3 border-r-3 border-black p-5 flex items-center gap-4 transition-all hover:-translate-y-1 hover:border-green reveal">
+          <div class="w-[42px] h-[42px] bg-dark border-2 border-[rgba(251,208,0,0.15)] flex items-center justify-center font-pixel text-[0.65rem] text-coin shrink-0">GIT</div>
+          <div>
+            <div class="font-pixel text-[0.45rem] text-text leading-snug">Git & GitHub</div>
+            <div class="text-[0.75rem] text-muted">Version Control</div>
+          </div>
+        </div>
+
+        <div class="bg-panel border-t-3 border-l-3 border-[#5A3000] border-b-3 border-r-3 border-black p-5 flex items-center gap-4 transition-all hover:-translate-y-1 hover:border-green reveal">
+          <div class="w-[42px] h-[42px] bg-dark border-2 border-[rgba(251,208,0,0.15)] flex items-center justify-center font-pixel text-[0.65rem] text-coin shrink-0">PM</div>
+          <div>
+            <div class="font-pixel text-[0.45rem] text-text leading-snug">Postman</div>
+            <div class="text-[0.75rem] text-muted">API Testing</div>
+          </div>
+        </div>
+
+        <div class="bg-panel border-t-3 border-l-3 border-[#5A3000] border-b-3 border-r-3 border-black p-5 flex items-center gap-4 transition-all hover:-translate-y-1 hover:border-green reveal">
+          <div class="w-[42px] h-[42px] bg-dark border-2 border-[rgba(251,208,0,0.15)] flex items-center justify-center font-pixel text-[0.65rem] text-coin shrink-0">FG</div>
+          <div>
+            <div class="font-pixel text-[0.45rem] text-text leading-snug">Figma</div>
+            <div class="text-[0.75rem] text-muted">UI / Design Handoff</div>
+          </div>
+        </div>
+
+        <div class="bg-panel border-t-3 border-l-3 border-[#5A3000] border-b-3 border-r-3 border-black p-5 flex items-center gap-4 transition-all hover:-translate-y-1 hover:border-green reveal">
+          <div class="w-[42px] h-[42px] bg-dark border-2 border-[rgba(251,208,0,0.15)] flex items-center justify-center font-pixel text-[0.65rem] text-coin shrink-0">CP</div>
+          <div>
+            <div class="font-pixel text-[0.45rem] text-text leading-snug">cPanel</div>
+            <div class="text-[0.75rem] text-muted">Server & Hosting</div>
+          </div>
+        </div>
+
+        <div class="bg-panel border-t-3 border-l-3 border-[#5A3000] border-b-3 border-r-3 border-black p-5 flex items-center gap-4 transition-all hover:-translate-y-1 hover:border-green reveal">
+          <div class="w-[42px] h-[42px] bg-dark border-2 border-[rgba(251,208,0,0.15)] flex items-center justify-center font-pixel text-[0.65rem] text-coin shrink-0">VT</div>
+          <div>
+            <div class="font-pixel text-[0.45rem] text-text leading-snug">Vite / Webpack</div>
+            <div class="text-[0.75rem] text-muted">Asset Bundlers</div>
+          </div>
+        </div>
+
+        <div class="bg-panel border-t-3 border-l-3 border-[#5A3000] border-b-3 border-r-3 border-black p-5 flex items-center gap-4 transition-all hover:-translate-y-1 hover:border-green reveal">
+          <div class="w-[42px] h-[42px] bg-dark border-2 border-[rgba(251,208,0,0.15)] flex items-center justify-center font-pixel text-[0.65rem] text-coin shrink-0">DB</div>
+          <div>
+            <div class="font-pixel text-[0.45rem] text-text leading-snug">phpMyAdmin</div>
+            <div class="text-[0.75rem] text-muted">Database Management</div>
+          </div>
+        </div>
+
+        <div class="bg-panel border-t-3 border-l-3 border-[#5A3000] border-b-3 border-r-3 border-black p-5 flex items-center gap-4 transition-all hover:-translate-y-1 hover:border-green reveal">
+          <div class="w-[42px] h-[42px] bg-dark border-2 border-[rgba(251,208,0,0.15)] flex items-center justify-center font-pixel text-[0.65rem] text-coin shrink-0">PS</div>
+          <div>
+            <div class="font-pixel text-[0.45rem] text-text leading-snug">Photoshop</div>
+            <div class="text-[0.75rem] text-muted">Asset Editing</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="w-full h-[40px] bg-ground border-t-8 border-[#E86030] border-b-8 border-ground2 relative after:content-[''] after:absolute after:inset-0 after:[background-image:repeating-linear-gradient(90deg,transparent_0,transparent_79px,rgba(0,0,0,.2)_79px,rgba(0,0,0,.2)_80px)]"></div>
+
+  <!-- ── PROJECTS SLIDER ── -->
+  <section id="projects" class="bg-dark2 py-14 sm:py-[5.5rem] overflow-hidden">
+    <div class="max-w-[1100px] mx-auto px-6">
+      <p class="font-pixel text-[0.55rem] text-coin tracking-widest mb-4 leading-loose uppercase">// PORTFOLIO</p>
+      <h2 class="font-pixel text-[clamp(0.95rem,2.5vw,1.45rem)] leading-relaxed mb-4 text-text">SELECTED PROJECTS</h2>
+      <p class="text-muted max-w-[60ch] mb-12 text-[0.98rem]">Real client websites — built, customised, and managed. Use the arrows or swipe to browse.</p>
+
+      <div class="relative">
+        <div class="overflow-hidden relative" id="slider-outer">
+          <div class="flex gap-[1.25rem] transition-transform duration-450 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] will-change-transform" id="slider-track">
+
+            <div class="flex-none w-full sm:w-[calc(50%-0.625rem)] lg:w-[calc(33.333%-0.84rem)] bg-panel border-t-3 border-l-3 border-[#5A3000] border-b-3 border-r-3 border-black flex flex-col relative overflow-hidden transition-all duration-200 hover:-translate-y-1.5 hover:shadow-[0_12px_32px_rgba(0,0,0,0.5)] reveal">
+              <div class="aspect-video bg-dark border-b-3 border-black flex items-center justify-center relative overflow-hidden group">
+                <div class="w-full h-full flex flex-col items-center justify-center gap-2 transition-transform duration-300 group-hover:scale-105 bg-gradient-to-br from-[#1a0c00] to-[#2a1800]">
+                  <span class="font-pixel text-[2rem] leading-none text-coin">S</span>
+                  <span class="font-pixel text-[0.28rem] text-muted leading-loose">shannak.com</span>
+                </div>
+              </div>
+              <div class="p-[1.1rem] flex-1 flex flex-col gap-[0.55rem]">
+                <div class="font-pixel text-[0.5rem] text-coin leading-loose">SHANNAK</div>
+                <p class="text-[0.82rem] text-muted leading-relaxed flex-1">Website design, development, and ongoing management. Clean, responsive layout focused on usability and strong brand presentation for the client.</p>
+                <div class="flex flex-wrap gap-1.5 mt-0.5">
+                  <span class="font-pixel text-[0.27rem] px-2 py-1 bg-dark text-muted border border-[rgba(255,248,231,0.06)] leading-loose">WordPress</span>
+                  <span class="font-pixel text-[0.27rem] px-2 py-1 bg-dark text-muted border border-[rgba(255,248,231,0.06)] leading-loose">Elementor</span>
+                  <span class="font-pixel text-[0.27rem] px-2 py-1 bg-dark text-muted border border-[rgba(255,248,231,0.06)] leading-loose">CSS</span>
+                  <span class="font-pixel text-[0.27rem] px-2 py-1 bg-dark text-muted border border-[rgba(255,248,231,0.06)] leading-loose">PHP</span>
+                </div>
+                <a href="https://www.shannak.com/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 mt-2 font-pixel text-[0.35rem] px-3.5 py-2 bg-coin text-dark border-t-2 border-l-2 border-[#FFF176] border-b-2 border-r-2 border-coin2 leading-tight self-start hover:brightness-110 active:translate-y-0.5 transition-transform">
+                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><rect x="0" y="4" width="8" height="2" fill="#140C00"/><polygon points="6,0 10,5 6,10" fill="#140C00"/></svg> VISIT LIVE SITE
+                </a>
+              </div>
+            </div>
+
+            <div class="flex-none w-full sm:w-[calc(50%-0.625rem)] lg:w-[calc(33.333%-0.84rem)] bg-panel border-t-3 border-l-3 border-[#5A3000] border-b-3 border-r-3 border-black flex flex-col relative overflow-hidden transition-all duration-200 hover:-translate-y-1.5 hover:shadow-[0_12px_32px_rgba(0,0,0,0.5)] reveal">
+              <div class="aspect-video bg-dark border-b-3 border-black flex items-center justify-center relative overflow-hidden group">
+                <div class="w-full h-full flex flex-col items-center justify-center gap-2 transition-transform duration-300 group-hover:scale-105 bg-gradient-to-br from-[#001a12] to-[#00301f]">
+                  <span class="font-pixel text-[2rem] leading-none text-green">B</span>
+                  <span class="font-pixel text-[0.28rem] text-muted leading-loose">bbmsmedia.com</span>
+                </div>
+              </div>
+              <div class="p-[1.1rem] flex-1 flex flex-col gap-[0.55rem]">
+                <div class="font-pixel text-[0.5rem] text-coin leading-loose">BBMS MEDIA</div>
+                <p class="text-[0.82rem] text-muted leading-relaxed flex-1">Website design, development, and ongoing management for a media client. Maintained layout, content, and site functionality as requirements evolved over time.</p>
+                <div class="flex flex-wrap gap-1.5 mt-0.5">
+                  <span class="font-pixel text-[0.27rem] px-2 py-1 bg-dark text-muted border border-[rgba(255,248,231,0.06)] leading-loose">WordPress</span>
+                  <span class="font-pixel text-[0.27rem] px-2 py-1 bg-dark text-muted border border-[rgba(255,248,231,0.06)] leading-loose">Elementor</span>
+                  <span class="font-pixel text-[0.27rem] px-2 py-1 bg-dark text-muted border border-[rgba(255,248,231,0.06)] leading-loose">JavaScript</span>
+                </div>
+                <a href="https://bbmsmedia.com/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 mt-2 font-pixel text-[0.35rem] px-3.5 py-2 bg-coin text-dark border-t-2 border-l-2 border-[#FFF176] border-b-2 border-r-2 border-coin2 leading-tight self-start hover:brightness-110 active:translate-y-0.5 transition-transform">
+                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><rect x="0" y="4" width="8" height="2" fill="#140C00"/><polygon points="6,0 10,5 6,10" fill="#140C00"/></svg> VISIT LIVE SITE
+                </a>
+              </div>
+            </div>
+
+            <div class="flex-none w-full sm:w-[calc(50%-0.625rem)] lg:w-[calc(33.333%-0.84rem)] bg-panel border-t-3 border-l-3 border-[#5A3000] border-b-3 border-r-3 border-black flex flex-col relative overflow-hidden transition-all duration-200 hover:-translate-y-1.5 hover:shadow-[0_12px_32px_rgba(0,0,0,0.5)] reveal">
+              <div class="aspect-video bg-dark border-b-3 border-black flex items-center justify-center relative overflow-hidden group">
+                <div class="w-full h-full flex flex-col items-center justify-center gap-2 transition-transform duration-300 group-hover:scale-105 bg-gradient-to-br from-[#1a000e] to-[#300018]">
+                  <span class="font-pixel text-[2rem] leading-none text-red-500">C</span>
+                  <span class="font-pixel text-[0.28rem] text-muted leading-loose">creazionstudios.com</span>
+                </div>
+              </div>
+              <div class="p-[1.1rem] flex-1 flex flex-col gap-[0.55rem]">
+                <div class="font-pixel text-[0.5rem] text-coin leading-loose">CREAZION STUDIOS</div>
+                <p class="text-[0.82rem] text-muted leading-relaxed flex-1">Website design, development, and management for a creative studio. Built to showcase work with a polished layout and smooth, intuitive navigation experience.</p>
+                <div class="flex flex-wrap gap-1.5 mt-0.5">
+                  <span class="font-pixel text-[0.27rem] px-2 py-1 bg-dark text-muted border border-[rgba(255,248,231,0.06)] leading-loose">WordPress</span>
+                  <span class="font-pixel text-[0.27rem] px-2 py-1 bg-dark text-muted border border-[rgba(255,248,231,0.06)] leading-loose">Elementor</span>
+                  <span class="font-pixel text-[0.27rem] px-2 py-1 bg-dark text-muted border border-[rgba(255,248,231,0.06)] leading-loose">JavaScript</span>
+                  <span class="font-pixel text-[0.27rem] px-2 py-1 bg-dark text-muted border border-[rgba(255,248,231,0.06)] leading-loose">CSS</span>
+                </div>
+                <a href="https://creazionstudios.com/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 mt-2 font-pixel text-[0.35rem] px-3.5 py-2 bg-coin text-dark border-t-2 border-l-2 border-[#FFF176] border-b-2 border-r-2 border-coin2 leading-tight self-start hover:brightness-110 active:translate-y-0.5 transition-transform">
+                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><rect x="0" y="4" width="8" height="2" fill="#140C00"/><polygon points="6,0 10,5 6,10" fill="#140C00"/></svg> VISIT LIVE SITE
+                </a>
+              </div>
+            </div>
+
+            <div class="flex-none w-full sm:w-[calc(50%-0.625rem)] lg:w-[calc(33.333%-0.84rem)] bg-panel border-t-3 border-l-3 border-[#5A3000] border-b-3 border-r-3 border-black flex flex-col relative overflow-hidden transition-all duration-200 hover:-translate-y-1.5 hover:shadow-[0_12px_32px_rgba(0,0,0,0.5)] reveal">
+              <div class="aspect-video bg-dark border-b-3 border-black flex items-center justify-center relative overflow-hidden group">
+                <div class="w-full h-full flex flex-col items-center justify-center gap-2 transition-transform duration-300 group-hover:scale-105 bg-gradient-to-br from-[#001018] to-[#001e2a]">
+                  <span class="font-pixel text-[2rem] leading-none text-sky">W</span>
+                  <span class="font-pixel text-[0.28rem] text-muted leading-loose">workspacesbysos.com.ph</span>
+                </div>
+              </div>
+              <div class="p-[1.1rem] flex-1 flex flex-col gap-[0.55rem]">
+                <div class="font-pixel text-[0.5rem] text-coin leading-loose">WORKSPACES BY SOS</div>
+                <p class="text-[0.82rem] text-muted leading-relaxed flex-1">Website for a Philippine co-working space. Presented flexible workspace options with a clear, structured layout tailored to a local business audience.</p>
+                <div class="flex flex-wrap gap-1.5 mt-0.5">
+                  <span class="font-pixel text-[0.27rem] px-2 py-1 bg-dark text-muted border border-[rgba(255,248,231,0.06)] leading-loose">WordPress</span>
+                  <span class="font-pixel text-[0.27rem] px-2 py-1 bg-dark text-muted border border-[rgba(255,248,231,0.06)] leading-loose">Elementor</span>
+                  <span class="font-pixel text-[0.27rem] px-2 py-1 bg-dark text-muted border border-[rgba(255,248,231,0.06)] leading-loose">WooCommerce</span>
+                </div>
+                <a href="https://workspacesbysos.com.ph/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 mt-2 font-pixel text-[0.35rem] px-3.5 py-2 bg-coin text-dark border-t-2 border-l-2 border-[#FFF176] border-b-2 border-r-2 border-coin2 leading-tight self-start hover:brightness-110 active:translate-y-0.5 transition-transform">
+                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><rect x="0" y="4" width="8" height="2" fill="#140C00"/><polygon points="6,0 10,5 6,10" fill="#140C00"/></svg> VISIT LIVE SITE
+                </a>
+              </div>
+            </div>
+
+            <div class="flex-none w-full sm:w-[calc(50%-0.625rem)] lg:w-[calc(33.333%-0.84rem)] bg-panel border-t-3 border-l-3 border-[#5A3000] border-b-3 border-r-3 border-black flex flex-col relative overflow-hidden transition-all duration-200 hover:-translate-y-1.5 hover:shadow-[0_12px_32px_rgba(0,0,0,0.5)] reveal">
+              <div class="aspect-video bg-dark border-b-3 border-black flex items-center justify-center relative overflow-hidden group">
+                <div class="w-full h-full flex flex-col items-center justify-center gap-2 transition-transform duration-300 group-hover:scale-105 bg-gradient-to-br from-[#0d0d0d] to-[#1a1a1a]">
+                  <span class="font-pixel text-[2rem] leading-none text-[#C8A870]">S</span>
+                  <span class="font-pixel text-[0.28rem] text-muted leading-loose">shadowoffice.com.au</span>
+                </div>
+              </div>
+              <div class="p-[1.1rem] flex-1 flex flex-col gap-[0.55rem]">
+                <div class="font-pixel text-[0.5rem] text-coin leading-loose">SHADOW OFFICE</div>
+                <p class="text-[0.82rem] text-muted leading-relaxed flex-1">Website design, development, and management for an Australian business. Professional and responsive with clear service presentation and strong visual identity.</p>
+                <div class="flex flex-wrap gap-1.5 mt-0.5">
+                  <span class="font-pixel text-[0.27rem] px-2 py-1 bg-dark text-muted border border-[rgba(255,248,231,0.06)] leading-loose">WordPress</span>
+                  <span class="font-pixel text-[0.27rem] px-2 py-1 bg-dark text-muted border border-[rgba(255,248,231,0.06)] leading-loose">Elementor</span>
+                  <span class="font-pixel text-[0.27rem] px-2 py-1 bg-dark text-muted border border-[rgba(255,248,231,0.06)] leading-loose">CSS</span>
+                  <span class="font-pixel text-[0.27rem] px-2 py-1 bg-dark text-muted border border-[rgba(255,248,231,0.06)] leading-loose">PHP</span>
+                </div>
+                <a href="https://shadowoffice.com.au/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 mt-2 font-pixel text-[0.35rem] px-3.5 py-2 bg-coin text-dark border-t-2 border-l-2 border-[#FFF176] border-b-2 border-r-2 border-coin2 leading-tight self-start hover:brightness-110 active:translate-y-0.5 transition-transform">
+                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><rect x="0" y="4" width="8" height="2" fill="#140C00"/><polygon points="6,0 10,5 6,10" fill="#140C00"/></svg> VISIT LIVE SITE
+                </a>
+              </div>
+            </div>
+
+            <div class="flex-none w-full sm:w-[calc(50%-0.625rem)] lg:w-[calc(33.333%-0.84rem)] bg-panel border-t-3 border-l-3 border-[#5A3000] border-b-3 border-r-3 border-black flex flex-col relative overflow-hidden transition-all duration-200 hover:-translate-y-1.5 hover:shadow-[0_12px_32px_rgba(0,0,0,0.5)] reveal">
+              <div class="aspect-video bg-dark border-b-3 border-black flex items-center justify-center relative overflow-hidden group">
+                <div class="w-full h-full flex flex-col items-center justify-center gap-2 transition-transform duration-300 group-hover:scale-105 bg-gradient-to-br from-[#001a10] to-[#002a1a]">
+                  <span class="font-pixel text-[2rem] leading-none text-green">F</span>
+                  <span class="font-pixel text-[0.28rem] text-muted leading-loose">fullspeedchartering.com</span>
+                </div>
+              </div>
+              <div class="p-[1.1rem] flex-1 flex flex-col gap-[0.55rem]">
+                <div class="font-pixel text-[0.5rem] text-coin leading-loose">FULL SPEED CHARTERING</div>
+                <p class="text-[0.82rem] text-muted leading-relaxed flex-1">Website for a chartering services company. Built for a professional audience with a focus on clear information delivery and a modern, industry-appropriate layout.</p>
+                <div class="flex flex-wrap gap-1.5 mt-0.5">
+                  <span class="font-pixel text-[0.27rem] px-2 py-1 bg-dark text-muted border border-[rgba(255,248,231,0.06)] leading-loose">WordPress</span>
+                  <span class="font-pixel text-[0.27rem] px-2 py-1 bg-dark text-muted border border-[rgba(255,248,231,0.06)] leading-loose">Elementor</span>
+                  <span class="font-pixel text-[0.27rem] px-2 py-1 bg-dark text-muted border border-[rgba(255,248,231,0.06)] leading-loose">JavaScript</span>
+                </div>
+                <a href="https://fullspeedchartering.com/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 mt-2 font-pixel text-[0.35rem] px-3.5 py-2 bg-coin text-dark border-t-2 border-l-2 border-[#FFF176] border-b-2 border-r-2 border-coin2 leading-tight self-start hover:brightness-110 active:translate-y-0.5 transition-transform">
+                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><rect x="0" y="4" width="8" height="2" fill="#140C00"/><polygon points="6,0 10,5 6,10" fill="#140C00"/></svg> VISIT LIVE SITE
+                </a>
+              </div>
+            </div>
+
+            <div class="flex-none w-full sm:w-[calc(50%-0.625rem)] lg:w-[calc(33.333%-0.84rem)] bg-panel border-t-3 border-l-3 border-[#5A3000] border-b-3 border-r-3 border-black flex flex-col relative overflow-hidden transition-all duration-200 hover:-translate-y-1.5 hover:shadow-[0_12px_32px_rgba(0,0,0,0.5)] reveal">
+              <div class="aspect-video bg-dark border-b-3 border-black flex items-center justify-center relative overflow-hidden group">
+                <div class="w-full h-full flex flex-col items-center justify-center gap-2 transition-transform duration-300 group-hover:scale-105 bg-gradient-to-br from-[#001218] to-[#001e28]">
+                  <span class="font-pixel text-[2rem] leading-none text-sky">A</span>
+                  <span class="font-pixel text-[0.28rem] text-muted leading-loose">amayadockyard.com</span>
+                </div>
+              </div>
+              <div class="p-[1.1rem] flex-1 flex flex-col gap-[0.55rem]">
+                <div class="font-pixel text-[0.5rem] text-coin leading-loose">AMAYA DOCKYARD</div>
+                <p class="text-[0.82rem] text-muted leading-relaxed flex-1">Website for a dockyard and marine services company. Presented technical services content in an accessible, professional format suited to the industry.</p>
+                <div class="flex flex-wrap gap-1.5 mt-0.5">
+                  <span class="font-pixel text-[0.27rem] px-2 py-1 bg-dark text-muted border border-[rgba(255,248,231,0.06)] leading-loose">WordPress</span>
+                  <span class="font-pixel text-[0.27rem] px-2 py-1 bg-dark text-muted border border-[rgba(255,248,231,0.06)] leading-loose">Elementor</span>
+                  <span class="font-pixel text-[0.27rem] px-2 py-1 bg-dark text-muted border border-[rgba(255,248,231,0.06)] leading-loose">PHP</span>
+                  <span class="font-pixel text-[0.27rem] px-2 py-1 bg-dark text-muted border border-[rgba(255,248,231,0.06)] leading-loose">MySQL</span>
+                </div>
+                <a href="https://amayadockyard.com/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 mt-2 font-pixel text-[0.35rem] px-3.5 py-2 bg-coin text-dark border-t-2 border-l-2 border-[#FFF176] border-b-2 border-r-2 border-coin2 leading-tight self-start hover:brightness-110 active:translate-y-0.5 transition-transform">
+                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><rect x="0" y="4" width="8" height="2" fill="#140C00"/><polygon points="6,0 10,5 6,10" fill="#140C00"/></svg> VISIT LIVE SITE
+                </a>
+              </div>
+            </div>
+
+            <div class="flex-none w-full sm:w-[calc(50%-0.625rem)] lg:w-[calc(33.333%-0.84rem)] bg-panel border-t-3 border-l-3 border-[#5A3000] border-b-3 border-r-3 border-black flex flex-col relative overflow-hidden transition-all duration-200 hover:-translate-y-1.5 hover:shadow-[0_12px_32px_rgba(0,0,0,0.5)] reveal">
+              <div class="aspect-video bg-dark border-b-3 border-black flex items-center justify-center relative overflow-hidden group">
+                <div class="w-full h-full flex flex-col items-center justify-center gap-2 transition-transform duration-300 group-hover:scale-105 bg-gradient-to-br from-[#180010] to-[#280018]">
+                  <span class="font-pixel text-[2rem] leading-none text-red-500">A</span>
+                  <span class="font-pixel text-[0.28rem] text-muted leading-loose">ardp.ph</span>
+                </div>
+              </div>
+              <div class="p-[1.1rem] flex-1 flex flex-col gap-[0.55rem]">
+                <div class="font-pixel text-[0.5rem] text-coin leading-loose">ARDP</div>
+                <p class="text-[0.82rem] text-muted leading-relaxed flex-1">Website design, development, and management for a Philippine organisation. Structured, content-driven site built for public-facing communication and information delivery.</p>
+                <div class="flex flex-wrap gap-1.5 mt-0.5">
+                  <span class="font-pixel text-[0.27rem] px-2 py-1 bg-dark text-muted border border-[rgba(255,248,231,0.06)] leading-loose">WordPress</span>
+                  <span class="font-pixel text-[0.27rem] px-2 py-1 bg-dark text-muted border border-[rgba(255,248,231,0.06)] leading-loose">Elementor</span>
+                  <span class="font-pixel text-[0.27rem] px-2 py-1 bg-dark text-muted border border-[rgba(255,248,231,0.06)] leading-loose">PHP</span>
+                </div>
+                <a href="https://ardp.ph/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 mt-2 font-pixel text-[0.35rem] px-3.5 py-2 bg-coin text-dark border-t-2 border-l-2 border-[#FFF176] border-b-2 border-r-2 border-coin2 leading-tight self-start hover:brightness-110 active:translate-y-0.5 transition-transform">
+                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><rect x="0" y="4" width="8" height="2" fill="#140C00"/><polygon points="6,0 10,5 6,10" fill="#140C00"/></svg> VISIT LIVE SITE
+                </a>
+              </div>
+            </div>
+
+            <div class="flex-none w-full sm:w-[calc(50%-0.625rem)] lg:w-[calc(33.333%-0.84rem)] bg-panel border-t-3 border-l-3 border-[#5A3000] border-b-3 border-r-3 border-black flex flex-col relative overflow-hidden transition-all duration-200 hover:-translate-y-1.5 hover:shadow-[0_12px_32px_rgba(0,0,0,0.5)] reveal">
+              <div class="aspect-video bg-dark border-b-3 border-black flex items-center justify-center relative overflow-hidden group">
+                <div class="w-full h-full flex flex-col items-center justify-center gap-2 transition-transform duration-300 group-hover:scale-105 bg-gradient-to-br from-[#0a1a00] to-[#142800]">
+                  <span class="font-pixel text-[2rem] leading-none text-green">M</span>
+                  <span class="font-pixel text-[0.28rem] text-muted leading-loose">mcp.org.ph</span>
+                </div>
+              </div>
+              <div class="p-[1.1rem] flex-1 flex flex-col gap-[0.55rem]">
+                <div class="font-pixel text-[0.5rem] text-coin leading-loose">MCP</div>
+                <p class="text-[0.82rem] text-muted leading-relaxed flex-1">Website design, development, and management for a Philippine organisation. Maintained a professional web presence with clean layout and well-organised content structure.</p>
+                <div class="flex flex-wrap gap-1.5 mt-0.5">
+                  <span class="font-pixel text-[0.27rem] px-2 py-1 bg-dark text-muted border border-[rgba(255,248,231,0.06)] leading-loose">WordPress</span>
+                  <span class="font-pixel text-[0.27rem] px-2 py-1 bg-dark text-muted border border-[rgba(255,248,231,0.06)] leading-loose">Elementor</span>
+                  <span class="font-pixel text-[0.27rem] px-2 py-1 bg-dark text-muted border border-[rgba(255,248,231,0.06)] leading-loose">MySQL</span>
+                </div>
+                <a href="https://mcp.org.ph/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 mt-2 font-pixel text-[0.35rem] px-3.5 py-2 bg-coin text-dark border-t-2 border-l-2 border-[#FFF176] border-b-2 border-r-2 border-coin2 leading-tight self-start hover:brightness-110 active:translate-y-0.5 transition-transform">
+                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><rect x="0" y="4" width="8" height="2" fill="#140C00"/><polygon points="6,0 10,5 6,10" fill="#140C00"/></svg> VISIT LIVE SITE
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between mt-6">
+          <div class="flex gap-3">
+            <button class="font-pixel text-[0.5rem] w-[44px] h-[44px] flex items-center justify-center bg-panel border-t-3 border-l-3 border-[#5A3000] border-b-3 border-r-3 border-black text-coin transition-all hover:bg-panel2 active:translate-y-0.5 disabled:opacity-40 disabled:cursor-not-allowed" id="sl-prev" aria-label="Previous">&lt;</button>
+            <button class="font-pixel text-[0.5rem] w-[44px] h-[44px] flex items-center justify-center bg-panel border-t-3 border-l-3 border-[#5A3000] border-b-3 border-r-3 border-black text-coin transition-all hover:bg-panel2 active:translate-y-0.5 disabled:opacity-40 disabled:cursor-not-allowed" id="sl-next" aria-label="Next">&gt;</button>
+          </div>
+          <div class="flex gap-2 items-center" id="slider-dots"></div>
+          <div class="font-pixel text-[0.38rem] text-muted leading-loose" id="slider-count"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="w-full h-[40px] bg-ground border-t-8 border-[#E86030] border-b-8 border-ground2 relative after:content-[''] after:absolute after:inset-0 after:[background-image:repeating-linear-gradient(90deg,transparent_0,transparent_79px,rgba(0,0,0,.2)_79px,rgba(0,0,0,.2)_80px)]"></div>
+
+  <!-- ── EXPERIENCE ── -->
+  <section id="experience" class="bg-dark py-14 sm:py-[5.5rem]">
+    <div class="max-w-[1100px] mx-auto px-6">
+      <p class="font-pixel text-[0.55rem] text-coin tracking-widest mb-4 leading-loose uppercase">// Work History</p>
+      <h2 class="font-pixel text-[clamp(0.95rem,2.5vw,1.45rem)] leading-relaxed mb-4 text-text">Where I've worked</h2>
+      <p class="text-muted max-w-[60ch] mb-12 text-[0.98rem]">Over a decade of professional experience across web development, website management, and IT operations.</p>
+
+      <div class="flex flex-col gap-6">
+        <div class="bg-panel border-t-3 border-l-3 border-[#5A3000] border-b-3 border-r-3 border-black p-[1.75rem] transition-colors hover:border-coin reveal">
+          <div class="mb-5">
+            <div class="font-pixel text-[0.48rem] text-coin leading-loose mb-1.5">Technomancer Inc.</div>
+            <div class="font-pixel text-[0.68rem] text-text leading-snug mb-1.5">Senior Website Designer / Web Developer</div>
+            <div class="font-pixel text-[0.38rem] text-muted leading-loose">February 2019 – August 2026 &nbsp;·&nbsp; 7 years 7 months</div>
+          </div>
+          <div class="h-[2px] bg-[rgba(251,208,0,0.15)] my-4"></div>
+          <div class="flex flex-col gap-3">
+            <div class="flex gap-3.5 items-start text-[0.9rem] text-muted leading-relaxed"><span class="font-pixel text-[0.5rem] text-coin shrink-0 mt-1">&gt;</span>Built and maintained responsive websites using HTML, CSS, JavaScript, Bootstrap, and Tailwind CSS, ensuring consistent presentation across devices and browsers.</div>
+            <div class="flex gap-3.5 items-start text-[0.9rem] text-muted leading-relaxed"><span class="font-pixel text-[0.5rem] text-coin shrink-0 mt-1">&gt;</span>Developed and customised WordPress, WooCommerce, and Shopify websites for a variety of client industries — handling theme customisation, plugin integration, and e-commerce functionality.</div>
+            <div class="flex gap-3.5 items-start text-[0.9rem] text-muted leading-relaxed"><span class="font-pixel text-[0.5rem] text-coin shrink-0 mt-1">&gt;</span>Created and managed web pages using Elementor and other CMS tools, working directly with client content and design requirements.</div>
+            <div class="flex gap-3.5 items-start text-[0.9rem] text-muted leading-relaxed"><span class="font-pixel text-[0.5rem] text-coin shrink-0 mt-1">&gt;</span>Built web applications using Laravel, Vue.js, and PHP — including custom functionality, REST APIs, and database-driven features with MySQL.</div>
+            <div class="flex gap-3.5 items-start text-[0.9rem] text-muted leading-relaxed"><span class="font-pixel text-[0.5rem] text-coin shrink-0 mt-1">&gt;</span>Integrated third-party plugins, external APIs, and payment gateways into client websites, managing both implementation and ongoing support.</div>
+            <div class="flex gap-3.5 items-start text-[0.9rem] text-muted leading-relaxed"><span class="font-pixel text-[0.5rem] text-coin shrink-0 mt-1">&gt;</span>Troubleshot and resolved website issues across a range of platforms — front-end layout bugs through to back-end PHP and database errors.</div>
+            <div class="flex gap-3.5 items-start text-[0.9rem] text-muted leading-relaxed"><span class="font-pixel text-[0.5rem] text-coin shrink-0 mt-1">&gt;</span>Managed website deployments, updates, and long-term maintenance, coordinating testing and releases to keep client sites running smoothly.</div>
+            <div class="flex gap-3.5 items-start text-[0.9rem] text-muted leading-relaxed"><span class="font-pixel text-[0.5rem] text-coin shrink-0 mt-1">&gt;</span>Improved website performance, usability, SEO, and accessibility in line with web standards and client goals.</div>
+            <div class="flex gap-3.5 items-start text-[0.9rem] text-muted leading-relaxed"><span class="font-pixel text-[0.5rem] text-coin shrink-0 mt-1">&gt;</span>Collaborated with clients and internal teams to scope, deliver, and iterate on websites and web applications.</div>
+          </div>
+        </div>
+
+        <div class="bg-panel border-t-3 border-l-3 border-[#5A3000] border-b-3 border-r-3 border-black p-[1.75rem] transition-colors hover:border-coin reveal">
+          <div class="mb-5">
+            <div class="font-pixel text-[0.48rem] text-coin leading-loose mb-1.5">Kimbel International</div>
+            <div class="font-pixel text-[0.68rem] text-text leading-snug mb-1.5">Data Entry Staff / Network Administrator</div>
+            <div class="font-pixel text-[0.38rem] text-muted leading-loose">February 2015 – January 2019 &nbsp;·&nbsp; 4 years</div>
+          </div>
+          <div class="h-[2px] bg-[rgba(251,208,0,0.15)] my-4"></div>
+          <div class="flex flex-col gap-3">
+            <div class="flex gap-3.5 items-start text-[0.9rem] text-muted leading-relaxed"><span class="font-pixel text-[0.5rem] text-coin shrink-0 mt-1">&gt;</span>Handled data entry responsibilities with a high standard of accuracy — maintaining and updating company records and product information.</div>
+            <div class="flex gap-3.5 items-start text-[0.9rem] text-muted leading-relaxed"><span class="font-pixel text-[0.5rem] text-coin shrink-0 mt-1">&gt;</span>Managed inventory tracking and product checking, ensuring records stayed consistent with physical stock.</div>
+            <div class="flex gap-3.5 items-start text-[0.9rem] text-muted leading-relaxed"><span class="font-pixel text-[0.5rem] text-coin shrink-0 mt-1">&gt;</span>Supported internal network administration — maintaining basic network infrastructure and assisting with hardware and connectivity troubleshooting.</div>
+            <div class="flex gap-3.5 items-start text-[0.9rem] text-muted leading-relaxed"><span class="font-pixel text-[0.5rem] text-coin shrink-0 mt-1">&gt;</span>Contributed to a structured data environment that supported company reporting and day-to-day operations.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="w-full h-[40px] bg-ground border-t-8 border-[#E86030] border-b-8 border-ground2 relative after:content-[''] after:absolute after:inset-0 after:[background-image:repeating-linear-gradient(90deg,transparent_0,transparent_79px,rgba(0,0,0,.2)_79px,rgba(0,0,0,.2)_80px)]"></div>
+
+  <!-- ── SERVICES ── -->
+  <section id="services" class="bg-dark2 py-14 sm:py-[5.5rem]">
+    <div class="max-w-[1100px] mx-auto px-6">
+      <p class="font-pixel text-[0.55rem] text-coin tracking-widest mb-4 leading-loose uppercase">// Services</p>
+      <h2 class="font-pixel text-[clamp(0.95rem,2.5vw,1.45rem)] leading-relaxed mb-4 text-text">What I can do for you</h2>
+      <p class="text-muted max-w-[60ch] mb-12 text-[0.98rem]">Whether you need a website built from scratch or an existing one properly looked after, I can help.</p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="bg-panel border-t-3 border-l-3 border-[#5A3000] border-b-3 border-r-3 border-black p-6 transition-all hover:-translate-y-1 hover:border-coin reveal">
+          <div class="font-pixel text-[0.45rem] text-coin leading-loose mb-2.5">01</div>
+          <div class="font-pixel text-[0.52rem] text-text leading-relaxed mb-2.5">WordPress Development</div>
+          <p class="text-[0.83rem] text-muted leading-relaxed">Custom theme builds, plugin integration, WooCommerce setup, and CMS configuration tailored to your content and workflow.</p>
+        </div>
+        <div class="bg-panel border-t-3 border-l-3 border-[#5A3000] border-b-3 border-r-3 border-black p-6 transition-all hover:-translate-y-1 hover:border-coin reveal">
+          <div class="font-pixel text-[0.45rem] text-coin leading-loose mb-2.5">02</div>
+          <div class="font-pixel text-[0.52rem] text-text leading-relaxed mb-2.5">Elementor Building</div>
+          <p class="text-[0.83rem] text-muted leading-relaxed">Responsive, polished pages built in Elementor — fast to load, easy to manage, and aligned with your brand.</p>
+        </div>
+        <div class="bg-panel border-t-3 border-l-3 border-[#5A3000] border-b-3 border-r-3 border-black p-6 transition-all hover:-translate-y-1 hover:border-coin reveal">
+          <div class="font-pixel text-[0.45rem] text-coin leading-loose mb-2.5">03</div>
+          <div class="font-pixel text-[0.52rem] text-text leading-relaxed mb-2.5">Website Management</div>
+          <p class="text-[0.83rem] text-muted leading-relaxed">Ongoing updates, backups, security checks, plugin management, and content changes to keep your site running reliably.</p>
+        </div>
+        <div class="bg-panel border-t-3 border-l-3 border-[#5A3000] border-b-3 border-r-3 border-black p-6 transition-all hover:-translate-y-1 hover:border-coin reveal">
+          <div class="font-pixel text-[0.45rem] text-coin leading-loose mb-2.5">04</div>
+          <div class="font-pixel text-[0.52rem] text-text leading-relaxed mb-2.5">Custom Web Apps</div>
+          <p class="text-[0.83rem] text-muted leading-relaxed">Web applications and custom functionality built with Laravel, Vue.js, PHP, and MySQL for custom business requirements.</p>
+        </div>
+        <div class="bg-panel border-t-3 border-l-3 border-[#5A3000] border-b-3 border-r-3 border-black p-6 transition-all hover:-translate-y-1 hover:border-coin reveal">
+          <div class="font-pixel text-[0.45rem] text-coin leading-loose mb-2.5">05</div>
+          <div class="font-pixel text-[0.52rem] text-text leading-relaxed mb-2.5">Troubleshooting & Bugs</div>
+          <p class="text-[0.83rem] text-muted leading-relaxed">Diagnosing and resolving website issues — broken layouts, PHP errors, plugin conflicts, or performance issues.</p>
+        </div>
+        <div class="bg-panel border-t-3 border-l-3 border-[#5A3000] border-b-3 border-r-3 border-black p-6 transition-all hover:-translate-y-1 hover:border-coin reveal">
+          <div class="font-pixel text-[0.45rem] text-coin leading-loose mb-2.5">06</div>
+          <div class="font-[#0.52rem] text-text leading-relaxed mb-2.5 font-pixel">Performance & SEO</div>
+          <p class="text-[0.83rem] text-muted leading-relaxed">Speed improvements, caching setup, image optimisation, and technical SEO adjustments to rank better.</p>
+        </div>
+        <div class="bg-panel border-t-3 border-l-3 border-[#5A3000] border-b-3 border-r-3 border-black p-6 transition-all hover:-translate-y-1 hover:border-coin reveal">
+          <div class="font-pixel text-[0.45rem] text-coin leading-loose mb-2.5">07</div>
+          <div class="font-pixel text-[0.52rem] text-text leading-relaxed mb-2.5">Website Migration</div>
+          <p class="text-[0.83rem] text-muted leading-relaxed">Safe migration between hosts, domain setup, SSL configuration, DNS management, and full deployment support.</p>
+        </div>
+        <div class="bg-panel border-t-3 border-l-3 border-[#5A3000] border-b-3 border-r-3 border-black p-6 transition-all hover:-translate-y-1 hover:border-coin reveal">
+          <div class="font-pixel text-[0.45rem] text-coin leading-loose mb-2.5">08</div>
+          <div class="font-pixel text-[0.52rem] text-text leading-relaxed mb-2.5">E-commerce Solutions</div>
+          <p class="text-[0.83rem] text-muted leading-relaxed">WooCommerce and Shopify setup, product management, payment gateway integration, and ongoing store support.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="w-full h-[40px] bg-ground border-t-8 border-[#E86030] border-b-8 border-ground2 relative after:content-[''] after:absolute after:inset-0 after:[background-image:repeating-linear-gradient(90deg,transparent_0,transparent_79px,rgba(0,0,0,.2)_79px,rgba(0,0,0,.2)_80px)]"></div>
+
+  <!-- ── YOUTUBE FEED ── -->
+  <section id="youtube" class="bg-dark py-14 sm:py-[5.5rem]">
+    <div class="max-w-[1100px] mx-auto px-6">
+      <p class="font-pixel text-[0.55rem] text-coin tracking-widest mb-4 leading-loose uppercase">// YOUTUBE CHANNEL</p>
+      <div class="flex items-start justify-between flex-wrap gap-6 mb-10">
+        <div>
+          <h2 class="font-pixel text-[clamp(0.95rem,2.5vw,1.45rem)] leading-relaxed mb-4 text-text">WATCH MY VIDEOS</h2>
+          <p class="text-muted max-w-[60ch] text-[0.98rem] mb-0">Behind-the-scenes looks at web development, WordPress tips, and project work from my channel.</p>
+        </div>
+        <div>
+          <div class="flex items-center gap-4 bg-panel border-t-3 border-l-3 border-[#5A3000] border-b-3 border-r-3 border-black px-5 py-3.5">
+            <div class="w-[40px] h-[28px] bg-red-600 border-t-2 border-l-2 border-[#FF6060] border-b-2 border-r-2 border-[#8B0000] flex items-center justify-center shrink-0">
+              <svg width="18" height="12" viewBox="0 0 18 12" fill="none"><polygon points="7,0 18,6 7,12" fill="white"/></svg>
+            </div>
+            <div>
+              <div class="font-pixel text-[0.4rem] text-text leading-loose">Honey Babes Epacta</div>
+              <div class="font-pixel text-[0.3rem] text-muted leading-loose">YouTube Channel</div>
+            </div>
+          </div>
+          <a href="https://www.youtube.com/@honeybabesepacta" target="_blank" rel="noopener" class="inline-flex items-center gap-2.5 mt-3 font-pixel text-[0.38rem] px-4 py-2 bg-red-600 text-text border-t-3 border-l-3 border-[#FF6060] border-b-3 border-r-3 border-[#8B0000] leading-relaxed hover:brightness-125 transition-all">
+            <svg width="16" height="11" viewBox="0 0 16 11" fill="none"><polygon points="6,0 16,5.5 6,11" fill="white"/></svg> SUBSCRIBE
+          </a>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div class="yt-card bg-panel border-t-3 border-l-3 border-[#5A3000] border-b-3 border-r-3 border-black overflow-hidden cursor-pointer hover:-translate-y-1 transition-transform" data-vid="dQw4w9WgXcQ" data-title="WordPress Tutorial: Building a Client Site" data-desc="A walkthrough of how I approach building a WordPress site from scratch for a client — from theme setup through to Elementor page building and plugin configuration.">
+          <div class="relative aspect-video bg-dark border-b-3 border-black overflow-hidden group">
+            <div class="w-full h-full bg-gradient-to-br from-[#1a0000] to-[#3a0000] flex flex-col items-center justify-center gap-2">
+              <svg width="60" height="42" viewBox="0 0 60 42" fill="none"><rect width="60" height="42" rx="6" fill="#E52A2A" opacity=".25"/><polygon points="24,10 24,32 44,21" fill="#FFF8E7" opacity=".7"/></svg>
+            </div>
+            <div class="absolute inset-0 flex items-center justify-center bg-[rgba(20,12,0,0.45)] group-hover:bg-[rgba(20,12,0,0.2)] transition-colors">
+              <div class="w-[52px] h-[36px] bg-red-600 border-t-3 border-l-3 border-[#FF6060] border-b-3 border-r-3 border-[#8B0000] flex items-center justify-center group-hover:scale-110 transition-transform">
+                <svg width="16" height="12" viewBox="0 0 16 12" fill="none"><polygon points="4,0 4,12 16,6" fill="white"/></svg>
+              </div>
+            </div>
+          </div>
+          <div class="p-4">
+            <div class="font-pixel text-[0.38rem] text-text leading-snug mb-1.5 uppercase">WORDPRESS: BUILDING A CLIENT SITE</div>
+            <p class="text-[0.78rem] text-muted leading-relaxed">Walkthrough of my full workflow — from theme setup and Elementor page building to plugin configuration and launch.</p>
+          </div>
+        </div>
+
+        <div class="yt-card bg-panel border-t-3 border-l-3 border-[#5A3000] border-b-3 border-r-3 border-black overflow-hidden cursor-pointer hover:-translate-y-1 transition-transform" data-vid="dQw4w9WgXcQ" data-title="Elementor Tips & Tricks I Actually Use" data-desc="Practical Elementor techniques I've picked up from working on real client websites — speed tips, layout tricks, and things that save time on live projects.">
+          <div class="relative aspect-video bg-dark border-b-3 border-black overflow-hidden group">
+            <div class="w-full h-full bg-gradient-to-br from-[#001a00] to-[#003000] flex flex-col items-center justify-center gap-2">
+              <svg width="60" height="42" viewBox="0 0 60 42" fill="none"><rect width="60" height="42" rx="6" fill="#42D142" opacity=".2"/><polygon points="24,10 24,32 44,21" fill="#FFF8E7" opacity=".7"/></svg>
+            </div>
+            <div class="absolute inset-0 flex items-center justify-center bg-[rgba(20,12,0,0.45)] group-hover:bg-[rgba(20,12,0,0.2)] transition-colors">
+              <div class="w-[52px] h-[36px] bg-red-600 border-t-3 border-l-3 border-[#FF6060] border-b-3 border-r-3 border-[#8B0000] flex items-center justify-center group-hover:scale-110 transition-transform">
+                <svg width="16" height="12" viewBox="0 0 16 12" fill="none"><polygon points="4,0 4,12 16,6" fill="white"/></svg>
+              </div>
+            </div>
+          </div>
+          <div class="p-4">
+            <div class="font-pixel text-[0.38rem] text-text leading-snug mb-1.5 uppercase">ELEMENTOR TIPS I ACTUALLY USE</div>
+            <p class="text-[0.78rem] text-muted leading-relaxed">Practical techniques from working on real client websites — speed tips, layout tricks, and time-savers.</p>
+          </div>
+        </div>
+
+        <div class="yt-card bg-panel border-t-3 border-l-3 border-[#5A3000] border-b-3 border-r-3 border-black overflow-hidden cursor-pointer hover:-translate-y-1 transition-transform" data-vid="dQw4w9WgXcQ" data-title="Laravel + Vue.js: My Dev Workflow" data-desc="How I structure Laravel and Vue.js projects for client work — folder structure, routing, component patterns, and how I keep things maintainable on real projects.">
+          <div class="relative aspect-video bg-dark border-b-3 border-black overflow-hidden group">
+            <div class="w-full h-full bg-gradient-to-br from-[#00101a] to-[#001e30] flex flex-col items-center justify-center gap-2">
+              <svg width="60" height="42" viewBox="0 0 60 42" fill="none"><rect width="60" height="42" rx="6" fill="#5C94FC" opacity=".2"/><polygon points="24,10 24,32 44,21" fill="#FFF8E7" opacity=".7"/></svg>
+            </div>
+            <div class="absolute inset-0 flex items-center justify-center bg-[rgba(20,12,0,0.45)] group-hover:bg-[rgba(20,12,0,0.2)] transition-colors">
+              <div class="w-[52px] h-[36px] bg-red-600 border-t-3 border-l-3 border-[#FF6060] border-b-3 border-r-3 border-[#8B0000] flex items-center justify-center group-hover:scale-110 transition-transform">
+                <svg width="16" height="12" viewBox="0 0 16 12" fill="none"><polygon points="4,0 4,12 16,6" fill="white"/></svg>
+              </div>
+            </div>
+          </div>
+          <div class="p-4">
+            <div class="font-pixel text-[0.38rem] text-text leading-snug mb-1.5 uppercase">LARAVEL + VUE.JS: MY DEV WORKFLOW</div>
+            <p class="text-[0.78rem] text-muted leading-relaxed">How I structure Laravel and Vue.js projects for client work — folder setup, routing, and maintainable component patterns.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-7 bg-panel border-t-2 border-l-2 border-[#5A3000] border-b-2 border-r-2 border-black p-4 flex items-center justify-between flex-wrap gap-4">
+        <div class="font-pixel text-[0.35rem] text-muted leading-loose uppercase">MORE VIDEOS ON MY CHANNEL — UPDATE THE VIDEO IDs ABOVE WITH YOUR ACTUAL YOUTUBE CONTENT</div>
+        <a href="https://www.youtube.com/@honeybabesepacta" target="_blank" rel="noopener" class="pixel-btn btn-outline text-[0.38rem] px-4 py-2">VIEW CHANNEL</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- YouTube Modal -->
+  <div class="hidden fixed inset-0 bg-[rgba(10,5,0,0.92)] z-[500] items-center justify-center p-6" id="yt-modal">
+    <div class="w-full max-w-[860px] bg-panel border-t-4 border-l-4 border-[#5A3000] border-b-4 border-r-4 border-black overflow-hidden">
+      <div class="flex items-center justify-between px-4 py-2.5 bg-dark2 border-b-3 border-black">
+        <div class="font-pixel text-[0.38rem] text-coin leading-loose" id="yt-modal-title"></div>
+        <div class="font-pixel text-[0.45rem] text-muted cursor-pointer leading-loose px-1.5 py-0.5 hover:text-red-500 transition-colors" id="yt-modal-close">[ X ]</div>
+      </div>
+      <div class="aspect-video w-full">
+        <iframe id="yt-iframe" src="" class="w-full h-full border-none block" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+      <div class="p-4 text-[0.85rem] text-muted leading-relaxed" id="yt-modal-desc"></div>
+    </div>
+  </div>
+
+  <div class="w-full h-[40px] bg-ground border-t-8 border-[#E86030] border-b-8 border-ground2 relative after:content-[''] after:absolute after:inset-0 after:[background-image:repeating-linear-gradient(90deg,transparent_0,transparent_79px,rgba(0,0,0,.2)_79px,rgba(0,0,0,.2)_80px)]"></div>
+
+  <!-- ── WHY ME ── -->
+  <section id="why" class="bg-dark py-14 sm:py-[5.5rem]">
+    <div class="max-w-[1100px] mx-auto px-6">
+      <p class="font-pixel text-[0.55rem] text-coin tracking-widest mb-4 leading-loose uppercase">// Why Work With Me</p>
+      <h2 class="font-pixel text-[clamp(0.95rem,2.5vw,1.45rem)] leading-relaxed mb-4 text-text">A developer who looks after<br>your website, not just builds it</h2>
+      <p class="text-muted max-w-[60ch] mb-12 text-[0.98rem]">A lot of developers hand over a finished site and move on. My background is in maintaining real client websites over years — which means I understand what actually matters after launch.</p>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <div class="flex flex-col gap-5">
+          <div class="bg-panel border-t-3 border-l-3 border-[#5A3000] border-b-3 border-r-3 border-black p-5 reveal">
+            <div class="font-pixel text-[0.48rem] text-coin leading-loose mb-1.5">Solid technical foundation</div>
+            <p class="text-[0.87rem] text-muted leading-relaxed">From server-side PHP and Laravel to front-end Vue.js and Tailwind — I work across the stack and know how the pieces connect.</p>
+          </div>
+          <div class="bg-panel border-t-3 border-l-3 border-[#5A3000] border-b-3 border-r-3 border-black p-5 reveal">
+            <div class="font-pixel text-[0.48rem] text-coin leading-loose mb-1.5">Real client website experience</div>
+            <p class="text-[0.87rem] text-muted leading-relaxed">I've managed live websites for actual businesses — handling updates, bugs, migrations, and requests under real-world constraints.</p>
+          </div>
+          <div class="bg-panel border-t-3 border-l-3 border-[#5A3000] border-b-3 border-r-3 border-black p-5 reveal">
+            <div class="font-pixel text-[0.48rem] text-coin leading-loose mb-1.5">Attention to detail</div>
+            <p class="text-[0.87rem] text-muted leading-relaxed">I notice the things most people miss — accessibility issues, performance bottlenecks, inconsistent layouts at edge-case screen sizes.</p>
+          </div>
+          <div class="bg-panel border-t-3 border-l-3 border-[#5A3000] border-b-3 border-r-3 border-black p-5 reveal">
+            <div class="font-pixel text-[0.48rem] text-coin leading-loose mb-1.5">Clear communication</div>
+            <p class="text-[0.87rem] text-muted leading-relaxed">I keep clients and teams informed without jargon. If something will take longer or there's a better way to do it, I'll say so upfront.</p>
+          </div>
+        </div>
+
+        <div class="bg-panel border-t-3 border-l-3 border-[#5A3000] border-b-3 border-r-3 border-black p-[1.75rem] reveal">
+          <div class="font-pixel text-[0.55rem] text-text leading-snug mb-5">What I handle well</div>
+          <div class="flex flex-col gap-2.5">
+            <div class="flex items-start gap-3 text-[0.85rem] text-muted leading-snug"><span class="font-pixel text-[0.45rem] text-green shrink-0 mt-1">OK!</span>WordPress setup, customisation, and maintenance</div>
+            <div class="flex items-start gap-3 text-[0.85rem] text-muted leading-snug"><span class="font-pixel text-[0.45rem] text-green shrink-0 mt-1">OK!</span>Building and refining Elementor page layouts</div>
+            <div class="flex items-start gap-3 text-[0.85rem] text-muted leading-snug"><span class="font-pixel text-[0.45rem] text-green shrink-0 mt-1">OK!</span>Plugin integration, conflicts, and troubleshooting</div>
+            <div class="flex items-start gap-3 text-[0.85rem] text-muted leading-snug"><span class="font-pixel text-[0.45rem] text-green shrink-0 mt-1">OK!</span>Laravel and Vue.js application development</div>
+            <div class="flex items-start gap-3 text-[0.85rem] text-muted leading-snug"><span class="font-pixel text-[0.45rem] text-green shrink-0 mt-1">OK!</span>cPanel hosting, migrations, and domain management</div>
+            <div class="flex items-start gap-3 text-[0.85rem] text-muted leading-snug"><span class="font-pixel text-[0.45rem] text-green shrink-0 mt-1">OK!</span>WooCommerce and Shopify e-commerce support</div>
+            <div class="flex items-start gap-3 text-[0.85rem] text-muted leading-snug"><span class="font-pixel text-[0.45rem] text-green shrink-0 mt-1">OK!</span>Website speed and performance improvements</div>
+            <div class="flex items-start gap-3 text-[0.85rem] text-muted leading-snug"><span class="font-pixel text-[0.45rem] text-green shrink-0 mt-1">OK!</span>Third-party API and payment gateway integration</div>
+            <div class="flex items-start gap-3 text-[0.85rem] text-muted leading-snug"><span class="font-pixel text-[0.45rem] text-green shrink-0 mt-1">OK!</span>SEO-friendly structure and technical SEO</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="w-full h-[40px] bg-ground border-t-8 border-[#E86030] border-b-8 border-ground2 relative after:content-[''] after:absolute after:inset-0 after:[background-image:repeating-linear-gradient(90deg,transparent_0,transparent_79px,rgba(0,0,0,.2)_79px,rgba(0,0,0,.2)_80px)]"></div>
+
+  <!-- ── CONTACT ── -->
+  <section id="contact" class="bg-dark2 py-14 sm:py-[5.5rem]">
+    <div class="max-w-[1100px] mx-auto px-6">
+      <p class="font-pixel text-[0.55rem] text-coin tracking-widest mb-4 leading-loose uppercase">// Get In Touch</p>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-[2.5rem] lg:gap-12 items-start">
+        <div>
+          <h2 class="font-pixel text-[clamp(0.85rem,2vw,1.25rem)] leading-snug mb-3">Let's work together</h2>
+          <p class="text-muted text-[0.95rem] mb-8 leading-relaxed">Looking for a full-time developer, a website manager, or freelance support? Reach me through any of the channels below or send a message directly.</p>
+
+          <div class="flex flex-col gap-3">
+            <a href="mailto:hbepacta@gmail.com" class="flex items-center gap-4 bg-panel border-t-3 border-l-3 border-[#5A3000] border-b-3 border-r-3 border-black p-4 transition-all hover:translate-x-1.5 hover:border-coin cursor-pointer">
+              <div class="w-[38px] h-[38px] bg-dark flex items-center justify-center shrink-0 border-2 border-[rgba(251,208,0,0.15)]">
+                <svg width="20" height="16" viewBox="0 0 20 16" fill="none">
+                  <rect width="20" height="16" rx="2" fill="#2A1400"/>
+                  <path d="M1 1L10 9L19 1" stroke="#FBD000" stroke-width="1.5"/>
+                  <rect x="1" y="1" width="18" height="14" rx="1" stroke="#FBD000" stroke-width="1" fill="none"/>
+                </svg>
+              </div>
+              <div>
+                <div class="font-pixel text-[0.42rem] text-muted leading-loose uppercase">Email</div>
+                <div class="text-[0.88rem] font-medium text-text">hbepacta@gmail.com</div>
+              </div>
+            </a>
+
+            <a href="https://www.linkedin.com/in/hb-epacta" target="_blank" rel="noopener" class="flex items-center gap-4 bg-panel border-t-3 border-l-3 border-[#5A3000] border-b-3 border-r-3 border-black p-4 transition-all hover:translate-x-1.5 hover:border-coin cursor-pointer">
+              <div class="w-[38px] h-[38px] bg-dark flex items-center justify-center shrink-0 border-2 border-[rgba(251,208,0,0.15)]">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <rect width="20" height="20" rx="3" fill="#2A1400"/>
+                  <rect x="3" y="7" width="3" height="10" fill="#5C94FC"/>
+                  <circle cx="4.5" cy="4.5" r="1.5" fill="#5C94FC"/>
+                  <path d="M9 7h3v1.5C12.5 7.5 13.5 7 15 7c2 0 3 1.2 3 3.5V17h-3v-5.5c0-1-.4-1.5-1.2-1.5S12 10.5 12 11.5V17H9V7z" fill="#5C94FC"/>
+                </svg>
+              </div>
+              <div>
+                <div class="font-pixel text-[0.42rem] text-muted leading-loose uppercase">LinkedIn</div>
+                <div class="text-[0.88rem] font-medium text-text">linkedin.com/in/hb-epacta</div>
+              </div>
+            </a>
+
+            <a href="https://www.facebook.com/ako.s.hb/" target="_blank" rel="noopener" class="flex items-center gap-4 bg-panel border-t-3 border-l-3 border-[#5A3000] border-b-3 border-r-3 border-black p-4 transition-all hover:translate-x-1.5 hover:border-coin cursor-pointer">
+              <div class="w-[38px] h-[38px] bg-dark flex items-center justify-center shrink-0 border-2 border-[rgba(251,208,0,0.15)]">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <rect width="20" height="20" rx="3" fill="#2A1400"/>
+                  <path d="M13 4h-1.5C10.7 4 10 4.7 10 5.5V7H8v2.5h2V16h2.5V9.5H14L14.5 7H12.5V5.75c0-.41.34-.75.75-.75H14V4z" fill="#5C94FC"/>
+                </svg>
+              </div>
+              <div>
+                <div class="font-pixel text-[0.42rem] text-muted leading-loose uppercase">Facebook</div>
+                <div class="text-[0.88rem] font-medium text-text">facebook.com/ako.s.hb/</div>
+              </div>
+            </a>
+
+            <a href="https://www.instagram.com/ets.bie/" target="_blank" rel="noopener" class="flex items-center gap-4 bg-panel border-t-3 border-l-3 border-[#5A3000] border-b-3 border-r-3 border-black p-4 transition-all hover:translate-x-1.5 hover:border-coin cursor-pointer">
+              <div class="w-[38px] h-[38px] bg-dark flex items-center justify-center shrink-0 border-2 border-[rgba(251,208,0,0.15)]">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E52A2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+              </div>
+              <div>
+                <div class="font-pixel text-[0.42rem] text-muted leading-loose uppercase">Instagram</div>
+                <div class="text-[0.88rem] font-medium text-text">instagram.com/ets.bie/</div>
+              </div>
+            </a>
+
+            <a href="https://www.tiktok.com/@hbepacta8" target="_blank" rel="noopener" class="flex items-center gap-4 bg-panel border-t-3 border-l-3 border-[#5A3000] border-b-3 border-r-3 border-black p-4 transition-all hover:translate-x-1.5 hover:border-coin cursor-pointer">
+              <div class="w-[38px] h-[38px] bg-dark flex items-center justify-center shrink-0 border-2 border-[rgba(251,208,0,0.15)]">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#42D142" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+                </svg>
+              </div>
+              <div>
+                <div class="font-pixel text-[0.42rem] text-muted leading-loose uppercase">TikTok</div>
+                <div class="text-[0.88rem] font-medium text-text">tiktok.com/@hbepacta8</div>
+              </div>
+            </a>
+
+            <a href="https://www.youtube.com/@hbepacta8198" target="_blank" rel="noopener" class="flex items-center gap-4 bg-panel border-t-3 border-l-3 border-[#5A3000] border-b-3 border-r-3 border-black p-4 transition-all hover:translate-x-1.5 hover:border-coin cursor-pointer">
+              <div class="w-[38px] h-[38px] bg-dark flex items-center justify-center shrink-0 border-2 border-[rgba(251,208,0,0.15)]">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E52A2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                  <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                </svg>
+              </div>
+              <div>
+                <div class="font-pixel text-[0.42rem] text-muted leading-loose uppercase">YouTube</div>
+                <div class="text-[0.88rem] font-medium text-text">youtube.com/@hbepacta8198</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <form class="flex flex-col gap-4" id="contact-form" onsubmit="event.preventDefault()">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="flex flex-col gap-1.5">
+                <label for="fname" class="font-pixel text-[0.38rem] text-muted leading-loose uppercase">First name</label>
+                <input type="text" id="fname" placeholder="Your first name" autocomplete="given-name" class="bg-panel border-t-2 border-l-2 border-[#5A3000] border-b-2 border-r-2 border-black p-3 text-text text-[0.9rem] outline-none focus:border-coin transition-colors appearance-none"/>
+              </div>
+              <div class="flex flex-col gap-1.5">
+                <label for="lname" class="font-pixel text-[0.38rem] text-muted leading-loose uppercase">Last name</label>
+                <input type="text" id="lname" placeholder="Your last name" autocomplete="family-name" class="bg-panel border-t-2 border-l-2 border-[#5A3000] border-b-2 border-r-2 border-black p-3 text-text text-[0.9rem] outline-none focus:border-coin transition-colors appearance-none"/>
+              </div>
+            </div>
+            <div class="flex flex-col gap-1.5">
+              <label for="cemail" class="font-pixel text-[0.38rem] text-muted leading-loose uppercase">Email address</label>
+              <input type="email" id="cemail" placeholder="you@company.com" autocomplete="email" class="bg-panel border-t-2 border-l-2 border-[#5A3000] border-b-2 border-r-2 border-black p-3 text-text text-[0.9rem] outline-none focus:border-coin transition-colors appearance-none"/>
+            </div>
+            <div class="flex flex-col gap-1.5">
+              <label for="subject" class="font-pixel text-[0.38rem] text-muted leading-loose uppercase">What's this about?</label>
+              <select id="subject" class="bg-panel border-t-2 border-l-2 border-[#5A3000] border-b-2 border-r-2 border-black p-3 text-text text-[0.9rem] outline-none focus:border-coin transition-colors appearance-none">
+                <option value="" class="bg-panel">Select a topic</option>
+                <option class="bg-panel">Full-time / Part-time role</option>
+                <option class="bg-panel">Freelance project</option>
+                <option class="bg-panel">WordPress development</option>
+                <option class="bg-panel">Website maintenance</option>
+                <option class="bg-panel">Custom web development</option>
+                <option class="bg-panel">Something else</option>
+              </select>
+            </div>
+            <div class="flex flex-col gap-1.5">
+              <label for="message" class="font-pixel text-[0.38rem] text-muted leading-loose uppercase">Message</label>
+              <textarea id="message" placeholder="Tell me about your project or what you're looking for…" class="bg-panel border-t-2 border-l-2 border-[#5A3000] border-b-2 border-r-2 border-black p-3 text-text text-[0.9rem] outline-none focus:border-coin transition-colors appearance-none resize-y min-h-[120px]"></textarea>
+            </div>
+            <button type="button" class="font-pixel text-[0.55rem] px-7 py-3.5 bg-coin text-dark border-t-4 border-l-4 border-[#FFF176] border-b-4 border-r-4 border-coin2 self-start cursor-pointer hover:bg-[#FFE040] active:translate-y-0.75 transition-all leading-loose uppercase" id="form-submit">Send Message</button>
+            <div id="form-status" class="text-[0.85rem] text-green mt-2 hidden"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="bg-dark border-t-4 border-black py-8">
+    <div class="max-w-[1100px] mx-auto px-6 flex items-center justify-between flex-wrap gap-4 max-sm:flex-col max-sm:text-center">
+      <div class="font-pixel text-[0.5rem] text-coin leading-loose">HB.dev — Honey Babes Epacta</div>
+      <div class="font-pixel text-[0.38rem] text-muted leading-loose">Senior Full-Stack Web Developer · Philippines</div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
