@@ -1,228 +1,233 @@
-document.addEventListener('DOMContentLoaded', () => {
+/* ════ NAV scroll shadow ════ */
+const mainNav = document.getElementById('main-nav');
+window.addEventListener('scroll', () => {
+    mainNav.style.boxShadow = window.scrollY > 40 ? '0 4px 0 var(--ground2), 0 8px 20px rgba(0,0,0,.5)' : '0 4px 0 var(--ground2)';
+}, {
+    passive: true
+});
 
-  /* ── NAV scroll ── */
-  const mainNav = document.getElementById('main-nav');
-  if (mainNav) {
-    window.addEventListener('scroll', () => {
-      mainNav.style.boxShadow = window.scrollY > 40 
-        ? '0 4px 0 #8B3300, 0 8px 20px rgba(0,0,0,.4)' 
-        : '0 4px 0 #8B3300';
-    });
-  }
-
-  /* ── Mobile menu ── */
-  const burger = document.getElementById('burger');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const closeMenu = document.getElementById('close-menu');
-  const menuLinks = document.querySelectorAll('.menu-link');
-
-  if (burger && mobileMenu) {
-    burger.addEventListener('click', () => mobileMenu.classList.add('flex', 'open'));
-    burger.addEventListener('click', () => mobileMenu.classList.remove('hidden'));
-  }
-
-  const hideMenu = () => {
-    if (mobileMenu) {
-      mobileMenu.classList.remove('flex', 'open');
-      mobileMenu.classList.add('hidden');
-    }
-  };
-
-  if (closeMenu) closeMenu.addEventListener('click', hideMenu);
-  menuLinks.forEach(l => l.addEventListener('click', hideMenu));
-
-  /* ── Brick tiles generation ── */
-  const brickRow = document.getElementById('bricks-row');
-  if (brickRow) {
+/* ════ Mobile menu ════ */
+document.getElementById('burger').addEventListener('click', () => document.getElementById('mobile-menu').classList.add('open'));
+document.getElementById('close-menu').addEventListener('click', () => document.getElementById('mobile-menu').classList.remove('open'));
+document.querySelectorAll('.menu-link').forEach(l => l.addEventListener('click', () => document.getElementById('mobile-menu').classList.remove('open')));
+/* ════ Brick tile generation ════ */
+const brickRow = document.getElementById('bricks-row');
+if (brickRow) {
     const n = Math.ceil(window.innerWidth / 56) + 4;
     for (let i = 0; i < n; i++) {
-      const b = document.createElement('div');
-      b.className = 'flex-1 h-[36px] bg-brick border-r-3 border-b-3 border-ground2 border-t-2 border-[#E86030]';
-      brickRow.appendChild(b);
+        const b = document.createElement('div');
+        b.className = 'brick-tile';
+        brickRow.appendChild(b);
     }
-  }
+}
 
-  /* ── INTERACTIVE GAME MECHANIC ── */
-  let coins = 0;
-  const mario = document.getElementById('mario');
-  const qBlock = document.getElementById('q-block');
-  const coinCountEl = document.getElementById('coin-count');
+/* ════ Star field for bonus stage ════ */
+const bonusStars = document.getElementById('bonus-stars');
+if (bonusStars) {
+    for (let i = 0; i < 60; i++) {
+        const s = document.createElement('div');
+        s.className = 'bonus-star';
+        s.style.left = Math.random() * 100 + '%';
+        s.style.top = Math.random() * 100 + '%';
+        s.style.animationDuration = (2 + Math.random() * 3) + 's';
+        s.style.animationDelay = (Math.random() * 3) + 's';
+        s.style.width = s.style.height = (Math.random() > .7 ? 3 : 2) + 'px';
+        bonusStars.appendChild(s);
+    }
+}
 
-  if (qBlock && mario) {
+/* ════ Cave dust particles ════ */
+const caveParts = document.getElementById('cave-particles');
+if (caveParts) {
+    for (let i = 0; i < 18; i++) {
+        const d = document.createElement('div');
+        d.className = 'cave-dust';
+        d.style.left = Math.random() * 100 + '%';
+        d.style.animationDuration = (8 + Math.random() * 10) + 's';
+        d.style.animationDelay = (Math.random() * 10) + 's';
+        d.style.opacity = .3 + Math.random() * .4;
+        caveParts.appendChild(d);
+    }
+}
+
+/* ════ MARIO & Q-BLOCK INTERACTIVE ════ */
+let coins = 0;
+const mario = document.getElementById('mario');
+const qBlock = document.getElementById('q-block');
+const coinCountEl = document.getElementById('coin-count');
+let hitCount = 0;
+const MAX_HITS = 5;
+
+function pad(n, l = 3) {
+    return String(n).padStart(l, '0');
+}
+
+if (qBlock && mario) {
     qBlock.addEventListener('click', (e) => {
-      // Pause ambient jump
-      mario.classList.remove('mario-jumping');
-
-      // Animate Mario upward
-      mario.style.transform = 'translateY(-120px)';
-
-      setTimeout(() => {
-        // Hit block feedback
-        qBlock.classList.add('hit');
-        coins += 1;
-        if (coinCountEl) {
-          coinCountEl.textContent = coins < 10 ? '0' + coins : coins;
-        }
-
-        // Create popped coin element
-        const rect = qBlock.getBoundingClientRect();
-        const stage = document.getElementById('game-stage');
-        if (stage) {
-          const stageRect = stage.getBoundingClientRect();
-
-          const cPop = document.createElement('div');
-          cPop.className = 'animate-coin-pop absolute w-5 h-5 bg-coin rounded-full border-3 border-coin2 pointer-events-none z-20';
-          cPop.style.left = (rect.left - stageRect.left + 12) + 'px';
-          cPop.style.top = (rect.top - stageRect.top - 10) + 'px';
-          stage.appendChild(cPop);
-
-          const sPop = document.createElement('div');
-          sPop.className = 'animate-score-pop absolute font-pixel text-[0.45rem] text-coin pointer-events-none z-21';
-          sPop.textContent = '+200';
-          sPop.style.left = (rect.left - stageRect.left + 6) + 'px';
-          sPop.style.top = (rect.top - stageRect.top - 20) + 'px';
-          stage.appendChild(sPop);
-
-          setTimeout(() => { cPop.remove(); sPop.remove(); }, 800);
-        }
-
-        // Return Mario & reset block state
+        if (qBlock.classList.contains('hit')) return;
+        mario.classList.remove('mario-jumping');
+        const blockRect = qBlock.getBoundingClientRect();
+        const stageRect = document.getElementById('game-stage').getBoundingClientRect();
+        const targetLeft = blockRect.left - stageRect.left + 2;
+        mario.style.transition = 'left 0.2s ease';
+        mario.style.left = targetLeft + 'px';
+        mario.style.transform = 'translateY(-130px)';
         setTimeout(() => {
-          mario.style.transform = 'translateY(0)';
-          setTimeout(() => {
-            mario.classList.add('mario-jumping');
-            qBlock.classList.remove('hit');
-          }, 300);
-        }, 150);
-      }, 150);
+            coins += 100;
+            hitCount++;
+            coinCountEl.textContent = pad(coins);
+            // Coin pop
+            const c = document.createElement('div');
+            c.className = 'coin-pop';
+            c.style.left = (qBlock.offsetLeft + 13) + 'px';
+            c.style.top = qBlock.offsetTop + 'px';
+            document.getElementById('game-stage').appendChild(c);
+            setTimeout(() => c.remove(), 650);
+            // Score pop
+            const s = document.createElement('div');
+            s.className = 'score-pop';
+            s.textContent = '+100';
+            s.style.left = (qBlock.offsetLeft + 4) + 'px';
+            s.style.top = (qBlock.offsetTop - 12) + 'px';
+            document.getElementById('game-stage').appendChild(s);
+            setTimeout(() => s.remove(), 850);
+            // Block hit state
+            if (hitCount >= MAX_HITS) {
+                qBlock.classList.add('hit');
+                qBlock.textContent = '';
+            }
+            // Return Mario
+            mario.style.transform = 'translateY(0)';
+            setTimeout(() => {
+                mario.style.left = '10%';
+                mario.classList.add('mario-jumping');
+            }, 300);
+        }, 230);
     });
-  }
-
-  /* ── SCROLL REVEAL ── */
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
+}
+/* ════ BUTTON CRACK PARTICLES ════ */
+function spawnCrackParticles(btn) {
+    const r = btn.getBoundingClientRect();
+    const cx = r.left + r.width / 2;
+    const cy = r.top + r.height / 2;
+    const colors = ['#C84B0E', '#E86030', '#8B3300', '#FBD000', '#5A1E00'];
+    for (let i = 0; i < 10; i++) {
+        const p = document.createElement('div');
+        p.className = 'crack-particle';
+        const size = 3 + Math.random() * 5;
+        const angle = (Math.PI * 2 / 10) * i + Math.random() * .5;
+        const dist = 20 + Math.random() * 30;
+        p.style.cssText = `
+left:${cx}px; top:${cy}px;
+width:${size}px; height:${size}px;
+background:${colors[Math.floor(Math.random()*colors.length)]};
+--dx:${Math.cos(angle)*dist}px;
+--dy:${Math.sin(angle)*dist - 10}px;
+animation-duration:${.35+Math.random()*.25}s;
+animation-delay:${Math.random()*.05}s;
+`;
+        document.body.appendChild(p);
+        setTimeout(() => p.remove(), 700);
+    }
+}
+document.querySelectorAll('.pixel-btn').forEach(btn => {
+    btn.addEventListener('mouseenter', () => spawnCrackParticles(btn));
+    btn.addEventListener('click', () => spawnCrackParticles(btn));
+    btn.addEventListener('touchstart', () => spawnCrackParticles(btn), {
+        passive: true
     });
-  }, { threshold: 0.1 });
-
-  reveals.forEach(el => observer.observe(el));
-
-  /* ── PROJECTS SLIDER ── */
-  const track = document.getElementById('slider-track');
-  const prevBtn = document.getElementById('sl-prev');
-  const nextBtn = document.getElementById('sl-next');
-  const dotsContainer = document.getElementById('slider-dots');
-  const countEl = document.getElementById('slider-count');
-
-  if (track && prevBtn && nextBtn) {
-    const slides = Array.from(track.children);
-    let currentIndex = 0;
-
-    const getSlidesPerPage = () => {
-      if (window.innerWidth >= 1024) return 3;
-      if (window.innerWidth >= 640) return 2;
-      return 1;
-    };
-
-    let slidesPerPage = getSlidesPerPage();
-    let maxIndex = Math.max(0, slides.length - slidesPerPage);
-
-    const updateDots = () => {
-      if (!dotsContainer) return;
-      dotsContainer.innerHTML = '';
-      const totalPages = maxIndex + 1;
-      for (let i = 0; i < totalPages; i++) {
-        const dot = document.createElement('div');
-        dot.className = `sdot w-3 h-3 bg-panel2 border-2 border-[#5A3000] cursor-pointer transition-colors ${i === currentIndex ? 'bg-coin border-coin2' : ''}`;
-        dot.addEventListener('click', () => goToSlide(i));
-        dotsContainer.appendChild(dot);
-      }
-    };
-
-    const updateSlider = () => {
-      const slideWidth = slides[0].getBoundingClientRect().width;
-      const gap = 20; // 1.25rem = 20px
-      track.style.transform = `translateX(-${currentIndex * (slideWidth + gap)}px)`;
-      
-      prevBtn.disabled = currentIndex === 0;
-      nextBtn.disabled = currentIndex >= maxIndex;
-
-      if (countEl) {
-        countEl.textContent = `${currentIndex + 1} / ${maxIndex + 1}`;
-      }
-      updateDots();
-    };
-
-    const goToSlide = (index) => {
-      currentIndex = Math.max(0, Math.min(index, maxIndex));
-      updateSlider();
-    };
-
-    prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
-    nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
-
-    window.addEventListener('resize', () => {
-      slidesPerPage = getSlidesPerPage();
-      maxIndex = Math.max(0, slides.length - slidesPerPage);
-      if (currentIndex > maxIndex) currentIndex = maxIndex;
-      updateSlider();
+});
+/* ════ SCROLL REVEAL ════ */
+const revealEls = document.querySelectorAll('.reveal');
+const ro = new IntersectionObserver((entries) => {
+    entries.forEach((e, idx) => {
+        if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            ro.unobserve(e.target);
+        }
     });
-
-    updateSlider();
-  }
-
-  /* ── YOUTUBE MODAL ── */
-  const ytModal = document.getElementById('yt-modal');
-  const ytIframe = document.getElementById('yt-iframe');
-  const ytModalTitle = document.getElementById('yt-modal-title');
-  const ytModalDesc = document.getElementById('yt-modal-desc');
-  const ytClose = document.getElementById('yt-modal-close');
-
-  if (ytModal && ytIframe) {
-    document.querySelectorAll('.yt-card').forEach(card => {
-      card.addEventListener('click', () => {
-        const vid = card.dataset.vid;
-        const title = card.dataset.title;
-        const desc = card.dataset.desc;
-
-        if (ytModalTitle) ytModalTitle.textContent = title || '';
-        if (ytModalDesc) ytModalDesc.textContent = desc || '';
-        ytIframe.src = `https://www.youtube.com/embed/${vid}?autoplay=1`;
-
-        ytModal.classList.remove('hidden');
-        ytModal.classList.add('flex', 'open');
-      });
+}, {
+    threshold: 0.07,
+    rootMargin: '0px 0px -30px 0px'
+});
+revealEls.forEach((el, i) => {
+    el.style.transitionDelay = (i % 4 * 0.06) + 's';
+    ro.observe(el);
+});
+/* ════ ACTIVE NAV + WORLD PROGRESS ════ */
+const sections = document.querySelectorAll('section[id]');
+const navAs = document.querySelectorAll('.nav-links a');
+const wpDots = document.querySelectorAll('.wp-dot');
+// Map sections to worlds
+const sectionWorldMap = {
+    'hero': 'hero',
+    'about': 'about',
+    'cv': 'about',
+    'skills': 'skills',
+    'tools': 'skills',
+    'projects': 'projects',
+    'experience': 'experience',
+    'services': 'experience',
+    'why': 'experience',
+    'contact': 'contact',
+};
+window.addEventListener('scroll', () => {
+    let cur = '';
+    sections.forEach(s => {
+        if (window.scrollY >= s.offsetTop - 140) cur = s.id;
     });
-
-    const closeYtModal = () => {
-      ytModal.classList.remove('flex', 'open');
-      ytModal.classList.add('hidden');
-      ytIframe.src = '';
-    };
-
-    if (ytClose) ytClose.addEventListener('click', closeYtModal);
-    ytModal.addEventListener('click', (e) => {
-      if (e.target === ytModal) closeYtModal();
+    navAs.forEach(a => a.classList.toggle('active-link', a.getAttribute('href') === '#' + cur));
+    // Update world progress dots
+    const worldKey = sectionWorldMap[cur] || 'hero';
+    wpDots.forEach(dot => {
+        dot.classList.toggle('wp-active', dot.dataset.section === worldKey);
     });
-  }
-
-  /* ── CONTACT FORM ── */
-  const formSubmit = document.getElementById('form-submit');
-  const formStatus = document.getElementById('form-status');
-
-  if (formSubmit && formStatus) {
-    formSubmit.addEventListener('click', () => {
-      formStatus.style.display = 'block';
-      formStatus.classList.remove('hidden');
-      formStatus.textContent = 'Message sent! Thanks for reaching out.';
-      setTimeout(() => {
-        formStatus.style.display = 'none';
-        formStatus.classList.add('hidden');
-      }, 5000);
+}, {
+    passive: true
+});
+/* ════ PARALLAX EFFECT ════ */
+const parallaxFar = document.getElementById('parallax-far');
+const parallaxMid = document.getElementById('parallax-mid');
+let ticking = false;
+document.addEventListener('mousemove', (e) => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+        if (parallaxFar && parallaxMid) {
+            const mx = (e.clientX / window.innerWidth - .5) * 20;
+            const my = (e.clientY / window.innerHeight - .5) * 10;
+            parallaxFar.style.transform = `translate(${mx*.4}px, ${my*.2}px)`;
+            parallaxMid.style.transform = `translate(${mx*.7}px, ${my*.35}px)`;
+        }
+        ticking = false;
     });
-  }
-
+});
+/* ════ CONTACT FORM ════ */
+document.getElementById('form-submit').addEventListener('click', () => {
+    const fname = document.getElementById('fname').value.trim();
+    const cemail = document.getElementById('cemail').value.trim();
+    const message = document.getElementById('message').value.trim();
+    const status = document.getElementById('form-status');
+    if (!fname || !cemail || !message) {
+        status.style.display = 'block';
+        status.style.color = '#E52A2A';
+        status.textContent = '⚠ Please fill in your name, email, and message.';
+        return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(cemail)) {
+        status.style.display = 'block';
+        status.style.color = '#E52A2A';
+        status.textContent = '⚠ Please enter a valid email address.';
+        return;
+    }
+    const btn = document.getElementById('form-submit');
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    setTimeout(() => {
+        status.style.display = 'block';
+        status.style.color = '#42D142';
+        status.textContent = '🏆 Message sent! Game Over — you reached the final castle. I\'ll be in touch soon.';
+        btn.textContent = '✓ Message Sent!';
+        document.querySelectorAll('#contact-form input, #contact-form textarea, #contact-form select').forEach(el => el.value = '');
+    }, 1200);
 });
