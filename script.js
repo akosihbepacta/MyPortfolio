@@ -7,19 +7,62 @@ window.addEventListener('scroll', () => {
 });
 
 /* ════ Mobile menu ════ */
-document.getElementById('burger').addEventListener('click', () => document.getElementById('mobile-menu').classList.add('open'));
-document.getElementById('close-menu').addEventListener('click', () => document.getElementById('mobile-menu').classList.remove('open'));
-document.querySelectorAll('.menu-link').forEach(l => l.addEventListener('click', () => document.getElementById('mobile-menu').classList.remove('open')));
-/* ════ Brick tile generation ════ */
-const brickRow = document.getElementById('bricks-row');
-if (brickRow) {
-    const n = Math.ceil(window.innerWidth / 56) + 4;
-    for (let i = 0; i < n; i++) {
-        const b = document.createElement('div');
-        b.className = 'brick-tile';
-        brickRow.appendChild(b);
-    }
+const burger = document.getElementById('burger');
+const mobileMenu = document.getElementById('mobile-menu');
+const closeMenu = document.getElementById('close-menu');
+const menuLinks = document.querySelectorAll('.menu-link');
+
+function openMobileMenu() {
+    mobileMenu.classList.add('open');
+    burger.setAttribute('aria-expanded', 'true');
+    document.body.classList.add('menu-open');
 }
+
+function closeMobileMenu() {
+    mobileMenu.classList.remove('open');
+    burger.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('menu-open');
+}
+
+burger.addEventListener('click', (e) => {
+    e.stopPropagation();
+
+    if (mobileMenu.classList.contains('open')) {
+        closeMobileMenu();
+    } else {
+        openMobileMenu();
+    }
+});
+
+closeMenu.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    closeMobileMenu();
+});
+
+menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        closeMobileMenu();
+    });
+});
+
+/* Close menu when clicking outside */
+document.addEventListener('click', (e) => {
+    if (
+        mobileMenu.classList.contains('open') &&
+        !mobileMenu.contains(e.target) &&
+        !burger.contains(e.target)
+    ) {
+        closeMobileMenu();
+    }
+});
+
+/* Close menu when pressing ESC */
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeMobileMenu();
+    }
+});
 
 /* ════ Star field for bonus stage ════ */
 const bonusStars = document.getElementById('bonus-stars');
